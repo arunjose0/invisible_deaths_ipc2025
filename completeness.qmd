@@ -103,8 +103,8 @@ map <- leaflet() |>
 # Show map
 map
 
-# Save as HTML (uncomment to use)
-# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+#Save as HTML (uncomment to use)
+htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
 
 ```
 
@@ -209,7 +209,7 @@ map <- leaflet() |>
 map
 
 # Save as HTML (uncomment to use)
-# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
 
 ```
 
@@ -310,7 +310,7 @@ map <- leaflet() |>
 map
 
 # Save as HTML (uncomment to use)
-# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
 
 ```
 

@@ -35,7 +35,6 @@ format:
     css: styles.css
     toc: true
     toc-depth: 2
-    embed-resources: true
     smooth-scroll: true
     include-in-header:
       text: |
