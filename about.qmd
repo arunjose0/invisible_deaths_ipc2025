@@ -1,0 +1,106 @@
+---
+title: "About"
+---
+
+## 🧭 About the Website
+
+::: {style="text-align:justify"}
+
+**Invisible Deaths** is a research communication website that shares findings from a study on **gender disparities in death registration in India**.
+
+This site presents key insights from multiple national datasets (CRS, SRS, NFHS) and uses Bayesian modeling to explore:
+
+- **Trends in death registration completeness**
+- **District-level gender gaps**
+- **The role of education, ownership, and other structural factors on death registration**
+
+The content is designed for researchers, policymakers, and the public. Interactive maps, reproducible code, and visual summaries aim to make the data more accessible and the findings more actionable.
+
+:::
+
+> 💡 *Every death deserves to be counted. By highlighting the hidden patterns in who gets registered—and who doesn’t—this site advocates for a more inclusive civil registration system.*
+
+
+
+---
+::: {style="text-align:justify"}
+
+📢 **Conference Presentation**  
+This research will be presented as a poster at the  
+🗓 **30th International Population Conference (IPC2025)**  
+📍 Brisbane, Australia | 13–18 July 2025  
+📌 **Poster ID: 250291**  
+📄 Title: *Gender Disparities in the Completeness of Death Registration in India*
+
+:::
+
+## 👩‍🔬 About the Authors
+
+::: {layout="[ 60, 40 ]"}
+::: {#first-column}
+### Dr Biju Soman, MBBS, MD, DPH, MSc, DLSHTM {.unnumbered}
+:::
+
+::: {#second-column}
+![](images/biju.png){width="100"}
+:::
+:::
+
+::: {style="text-align:justify"}
+
+Dr. Biju Soman is the Professor and Head of Achutha Menon Centre for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences and Technology (SCTIMST), Trivandrum, Kerala. Dr. Soman had completed his MBBS in 1992, DPH in 1996 and M.D. (Community Medicine) in 1999 from Government Medical College Trivandrum (University of Kerala) and his MSc (Control of Infectious Diseases) in 2011 from the University of London and DLSHTM in 2012 from the London School of Hygiene and Tropical Medicine (U.K.). He has undergone advanced training in health informatics from Oslo University (Norway), Teaching Methodology from Boston School of Public Health (USA), Multilevel Modelling from Bielefeld University (Germany), and Advances in Geographic Information Systems (GIS) from National Remote Sensing Centre (Hyderabad). Dr. Soman teaches Public Health Technologies, Infectious Disease Epidemiology, and Database Management in Epidemiology modules at AMCHSS as part of the PhD and MPH curriculum. He has contributed chapters to a few books and has many peer-reviewed publications. Some of his professional involvements at SCTIMST include Chairperson, Board of Studies (Health Sciences); Member, Standing Academic Committee; Executive Member, Health Action by People (NGO); Member, Research Advisory Committee, Centre for Environment Development, Trivandrum; and Executive Member, Centre for Advancement of Global Health (NGO). He also heads the Regional Technical Resource Centre (RTRC) of the Health Technology Assessment India (HTAIn) at SCTIMST. His current research and teaching are around data science in public health, including public health informatics, geospatial analysis, telemedicine, health technology assessment, and infectious disease epidemiology. He endorses open data initiative, FOSS resources, and reproducible research initiatives.
+
+-   URL: www.sctimst.ac.in/people/bijusoman
+-   Email: [bijusoman\@sctimst.ac.in](mailto:bijusoman@sctimst.ac.in){.email}, [bijusoman\@gmail.com](mailto:bijusoman@gmail.com){.email}
+-   Linkedin: https://www.linkedin.com/in/drbijusoman
+
+:::
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+::: {#first-column}
+
+{{< pagebreak >}}
+
+::: {layout="[ 60, 40 ]"}
+<div>
+
+### Arun Jose, BSc, MSc {.unnumbered}
+
+</div>
+
+<div>
+
+![](images/arun.jpg){width="88"}
+
+</div>
+:::
+
+::: {style="text-align:justify"}
+
+Arun Jose is a researcher currently immersed in the pursuit of a Ph.D. in Health Sciences at the Achutha Menon Centre for Health Science Studies, SCTIMST, Trivandrum. With a profound academic foundation, he holds a Master of Science degree in Demography and Biostatistics from the University of Kerala.
+
+His current focus lies in the domain of projecting population dynamics at granular levels, employing diverse modeling techniques to unravel insights crucial for informed decision-making.
+
+:::
+
+-   Email: [arunjose\@sctimst.ac.in](mailto:arunjose@sctimst.ac.in){.email}
+-   Linkedin: https://www.linkedin.com/in/arun-jose-20808a183/
+
+
+
+
+
+
+### Disclaimer {.unnumbered}
+
+::: {style="text-align:justify"}
+
+Copyright © 2024 by the authors
+
+All rights reserved. No part of this publication may be reproduced in any form by any electronic or mechanical means (including photocopying, recording or information storage and retrieval) without permission in writing from the individual authors.
+
+:::
+
+

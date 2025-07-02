@@ -1,0 +1,30 @@
+## 📌 Conclusion
+
+> 📈 **Progress with Persistent Gaps**  
+India has made significant strides in improving the completeness of death registration, increasing from 70% in 2014 to 89.3% in 2021. However, this progress has been uneven—**gender disparities not only persist but have widened** over time.
+
+::: {.callout-tip title="Key Insight"}
+Even as both male and female registration rates improved, the **gender gap grew from 10.1% to 13.5%** between 2014 and 2021.
+:::
+
+### 🧩 Gender Effects and Shifting Mediators
+
+Using state-level mediation models, we observed that in **2015**, asset ownership explained **15% of the gender gap** in registration. By **2020**, this contribution dropped to **just 3.1%**, indicating that **structural factors beyond wealth** are driving gender inequality in death registration.
+
+> 💬 *Policies like the Pradhan Mantri Awas Yojana may have increased women's asset ownership—but property alone isn't enough to close the gap.*
+
+### 🗺️ Spatial Inequality and Gender Bias
+
+Regions already known for **low overall registration**, such as **Northern, Central, and Eastern India**, also show **the highest gender gaps**. This suggests that **geography and gender inequality intersect**, creating deep-rooted barriers to accurate mortality reporting.
+
+::: {.callout-warning title="CRS Not Yet Fully Reliable"}
+Despite improvements, CRS completeness remains **under 90%**, and cause-of-death information is often missing or unreliable. In some states, however, CRS has outperformed SRS, showing its future potential.
+:::
+
+
+---
+
+## 🔍 Final Takeaway
+
+> 🧾 Death registration is more than a statistic—it's a record of existence.  
+To make the Civil Registration System inclusive and accurate, India must tackle **both administrative weaknesses and gendered barriers**. Future reforms should be grounded in **social equity**, ensuring **every life is counted and valued**.

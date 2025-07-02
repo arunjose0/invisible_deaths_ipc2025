@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>results – Invisible Deaths</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Invisible Deaths</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"><i class="bi bi-house-door"></i> Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data_methods.html"> 
+<span class="menu-text"><i class="bi bi-gear"></i> Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./results.html" aria-current="page"> 
+<span class="menu-text"><i class="bi bi-bar-chart-line"></i> Results</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./completeness.html"> 
+<span class="menu-text"><i class="bi bi-map"></i> Maps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./conclusion.html"> 
+<span class="menu-text"><i class="bi bi-flag"></i> Conclusion</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text"><i class="bi bi-info-circle"></i> About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#trends-in-death-registration-completeness-in-india-20142021" id="toc-trends-in-death-registration-completeness-in-india-20142021" class="nav-link active" data-scroll-target="#trends-in-death-registration-completeness-in-india-20142021">📈 Trends in Death Registration Completeness in India (2014–2021)</a></li>
+  <li><a href="#gender-gaps-in-death-registration-at-the-district-level-2021" id="toc-gender-gaps-in-death-registration-at-the-district-level-2021" class="nav-link" data-scroll-target="#gender-gaps-in-death-registration-at-the-district-level-2021">🧭 Gender Gaps in Death Registration at the District Level (2021)</a></li>
+  <li><a href="#total-and-direct-effects-of-gender-on-death-registration-2015-2020" id="toc-total-and-direct-effects-of-gender-on-death-registration-2015-2020" class="nav-link" data-scroll-target="#total-and-direct-effects-of-gender-on-death-registration-2015-2020">🧮 Total and Direct Effects of Gender on Death Registration (2015 &amp; 2020)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="trends-in-death-registration-completeness-in-india-20142021" class="level2">
+<h2 class="anchored" data-anchor-id="trends-in-death-registration-completeness-in-india-20142021">📈 Trends in Death Registration Completeness in India (2014–2021)</h2>
+<p>India has made strong progress in registering deaths over the last decade — but the gender gap has widened.</p>
+<ul>
+<li><strong>Overall completeness</strong> rose from <strong>70% in 2014</strong> to <strong>89.3% in 2021</strong>.</li>
+<li><strong>Male deaths</strong> were more likely to be registered:
+<ul>
+<li>From <strong>73.4% (2014)</strong> to <strong>96% (2021)</strong></li>
+</ul></li>
+<li><strong>Female registration</strong> also improved:
+<ul>
+<li>From <strong>63.3% to 82.5%</strong></li>
+</ul></li>
+<li>However, the <strong>gender gap widened</strong>:
+<ul>
+<li>From <strong>10.1% to 13.5%</strong> over this period</li>
+</ul></li>
+</ul>
+<section id="figure-1.-death-registration-completeness-in-india-by-sex-20142021" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1.-death-registration-completeness-in-india-by-sex-20142021">Figure 1. Death Registration Completeness in India by Sex (2014–2021)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-8219ccbeea698ed29dc0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8219ccbeea698ed29dc0">{"x":{"data":[{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[63.299999999999997,62.799999999999997,62.899999999999999,62.100000000000001,65.5,72.299999999999997,73.599999999999994,82.5],"text":["year: 2014<br />completeness: 63.3<br />category: Female","year: 2015<br />completeness: 62.8<br />category: Female","year: 2016<br />completeness: 62.9<br />category: Female","year: 2017<br />completeness: 62.1<br />category: Female","year: 2018<br />completeness: 65.5<br />category: Female","year: 2019<br />completeness: 72.3<br />category: Female","year: 2020<br />completeness: 73.6<br />category: Female","year: 2021<br />completeness: 82.5<br />category: Female"],"type":"scatter","mode":"lines","line":{"width":4.5354330708661417,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"Female","legendgroup":"Female","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[73.400000000000006,75,75.099999999999994,74.599999999999994,80.099999999999994,87.400000000000006,90,96],"text":["year: 2014<br />completeness: 73.4<br />category: Male","year: 2015<br />completeness: 75.0<br />category: Male","year: 2016<br />completeness: 75.1<br />category: Male","year: 2017<br />completeness: 74.6<br />category: Male","year: 2018<br />completeness: 80.1<br />category: Male","year: 2019<br />completeness: 87.4<br />category: Male","year: 2020<br />completeness: 90.0<br />category: Male","year: 2021<br />completeness: 96.0<br />category: Male"],"type":"scatter","mode":"lines","line":{"width":4.5354330708661417,"color":"rgba(0,186,56,1)","dash":"solid"},"hoveron":"points","name":"Male","legendgroup":"Male","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[70,70.599999999999994,70.900000000000006,69.700000000000003,73.599999999999994,80.599999999999994,82.299999999999997,89.299999999999997],"text":["year: 2014<br />completeness: 70.0<br />category: Persons","year: 2015<br />completeness: 70.6<br />category: Persons","year: 2016<br />completeness: 70.9<br />category: Persons","year: 2017<br />completeness: 69.7<br />category: Persons","year: 2018<br />completeness: 73.6<br />category: Persons","year: 2019<br />completeness: 80.6<br />category: Persons","year: 2020<br />completeness: 82.3<br />category: Persons","year: 2021<br />completeness: 89.3<br />category: Persons"],"type":"scatter","mode":"lines","line":{"width":4.5354330708661417,"color":"rgba(97,156,255,1)","dash":"solid"},"hoveron":"points","name":"Persons","legendgroup":"Persons","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":42.5670402656704,"r":6.6417600664176026,"b":44.49521862444935,"l":46.160232461602334},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b> Trends in Death Registration Completeness in India(2014–2021) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685762},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2013.6500000000001,2021.3499999999999],"tickmode":"array","ticktext":["2014","2015","2016","2017","2018","2019","2020","2021"],"tickvals":[2014,2015,2016,2017,2018,2019,2020,2021],"categoryorder":"array","categoryarray":["2014","2015","2016","2017","2018","2019","2020","2021"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835198},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"<b> Year <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-5,105],"tickmode":"array","ticktext":["0","25","50","75","100"],"tickvals":[0,24.999999999999996,50,75,100],"categoryorder":"array","categoryarray":["0","25","50","75","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835205},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"<b> Completeness (%) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198},"title":{"text":"Sex","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"477c704724a9":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"477c704724a9","visdat":{"477c704724a9":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<hr>
+</section>
+<section id="state-level-trends" class="level3">
+<h3 class="anchored" data-anchor-id="state-level-trends">🗺️ State-Level Trends</h3>
+<p>Some states made significant progress, while others saw setbacks.</p>
+<section id="states-with-biggest-improvements" class="level4">
+<h4 class="anchored" data-anchor-id="states-with-biggest-improvements">✅ States with Biggest Improvements</h4>
+<ul>
+<li><strong>Bihar</strong>: Up <strong>2.4×</strong> to <strong>57.5%</strong></li>
+<li><strong>Uttar Pradesh</strong>: Up <strong>1.8×</strong> to <strong>76%</strong></li>
+<li><strong>Madhya Pradesh</strong>: Achieved <strong>94.8%</strong>, a <strong>1.7×</strong> increase</li>
+</ul>
+</section>
+<section id="states-with-declining-completeness" class="level4">
+<h4 class="anchored" data-anchor-id="states-with-declining-completeness">⚠️ States with Declining Completeness</h4>
+<ul>
+<li><strong>Jharkhand</strong>: Fell from <strong>64.8% → 52.3%</strong></li>
+<li><strong>Himachal Pradesh</strong>: From <strong>85.5% → 80.2%</strong></li>
+<li><strong>Kerala</strong>: Dropped from full coverage to <strong>95%</strong></li>
+<li><strong>Punjab</strong>: Fell from <strong>100% → 88.1%</strong></li>
+</ul>
+</section>
+<section id="overall-improvement" class="level4">
+<h4 class="anchored" data-anchor-id="overall-improvement">📊 Overall Improvement</h4>
+<ul>
+<li>In 2014, only <strong>4 of 21</strong> large states had &gt;90% completeness.</li>
+<li>By 2020, that number increased to <strong>11 states</strong>.</li>
+</ul>
+</section>
+</section>
+<section id="figure-2.-completeness-of-death-registration-by-state-and-sex-20142021" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2.-completeness-of-death-registration-by-state-and-sex-20142021">Figure 2. Completeness of Death Registration by State and Sex (2014–2021)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-ac0a7b135c359040654a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ac0a7b135c359040654a">{"x":{"data":[{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"z":[[0.3186602870813397,0.38755980861244022,0.27177033492822966,0.21244019138755985,0.13971291866028709,0.1827751196172249,0.14354066985645933,0.21052631578947367],[0,0.017224880382775126,0.018181818181818167,0.11291866028708135,0.035406698564593296,0.1827751196172249,0.24784688995215309,0.31196172248803827],[0.13684210526315788,0.14641148325358849,0.25263157894736843,0.40861244019138759,0.28421052631578952,0.32248803827751199,0.42679425837320578,0.44401913875598092],[0.20191387559808613,0.18181818181818182,0.14928229665071771,0.12248803827751197,0.29282296650717704,0.29569377990430623,0.21722488038277515,0.39043062200956935],[0.36650717703349278,0.43253588516746416,0.50526315789473686,0.3339712918660287,0.21626794258373208,0.4784688995215311,0.39425837320574164,0.55311004784688989],[0.48612440191387557,0.4516746411483254,0.40956937799043058,0.41818181818181821,0.45358851674641154,0.57607655502392352,0.57894736842105265,0.46028708133971286],[0.68516746411483254,0.70813397129186606,0.48133971291866023,0.53397129186602865,0.56555023923444969,0.54162679425837312,0.55406698564593304,0.52918660287081332],[0.29377990430622014,0.3339712918660287,0.38086124401913873,0.15789473684210525,0.31196172248803827,0.48516746411483258,0.43253588516746416,0.60669856459330151],[0.50717703349282295,0.49090909090909091,0.51674641148325362,0.48899521531100471,0.47655502392344495,0.52440191387559809,0.61339712918660283,0.56363636363636371],[0.35598086124401918,0.39808612440191388,0.43349282296650715,0.40287081339712921,0.49186602870813401,0.59999999999999998,0.61435406698564599,0.58181818181818179],[0.54928229665071771,0.55406698564593304,0.64210526315789473,0.59808612440191389,0.63444976076555026,0.60478468899521531,0.64593301435406703,0.59712918660287084],[0.79999999999999993,0.75789473684210529,0.87368421052631573,0.68133971291866036,0.71770334928229662,0.66220095693779912,0.64210526315789473,0.63923444976076549],[0.63636363636363635,0.57033492822966503,0.54736842105263162,0.48708133971291873,0.55023923444976075,0.56650717703349285,0.61531100478468892,0.67942583732057416],[0.44210526315789478,0.42583732057416268,0.48899521531100471,0.46315789473684216,0.35693779904306216,0.43349282296650715,0.38277511961722488,0.66124401913875597],[0.48708133971291873,0.4191387559808612,0.42966507177033492,0.54162679425837312,0.52631578947368418,0.60382775119617216,0.63827751196172255,0.63827751196172255],[0.35119617224880384,0.26889952153110047,0.30526315789473685,0.3349282296650718,0.36650717703349278,0.42583732057416268,0.48899521531100471,0.63253588516746406],[0.79904306220095689,0.82009569377990432,0.65071770334928225,0.71674641148325369,0.68803827751196178,0.70622009569377986,0.62296650717703339,0.6947368421052631],[0.55023923444976075,0.67081339712918653,0.67368421052631589,0.56267942583732056,0.71004784688995215,0.74066985645933014,0.82105263157894737,0.82296650717703346],[0.55693779904306218,0.56937799043062198,0.43157894736842101,0.44210526315789478,0.51004784688995208,0.54545454545454541,0.65550239234449759,0.7827751196172249],[0.67559808612440186,0.68229665071770329,0.72535885167464109,0.65741626794258379,0.6516746411483253,0.7110047846889952,0.70526315789473681,0.75980861244019149],[0.69569377990430625,0.74641148325358853,0.7521531100478468,0.72248803827751196,0.73014354066985643,0.90239234449760763,0.97033492822966516,1]],"text":[["year: 2014<br />state: Jharkhand<br />completeness:  52.3","year: 2015<br />state: Jharkhand<br />completeness:  59.5","year: 2016<br />state: Jharkhand<br />completeness:  47.4","year: 2017<br />state: Jharkhand<br />completeness:  41.2","year: 2018<br />state: Jharkhand<br />completeness:  33.6","year: 2019<br />state: Jharkhand<br />completeness:  38.1","year: 2020<br />state: Jharkhand<br />completeness:  34.0","year: 2021<br />state: Jharkhand<br />completeness:  41.0"],["year: 2014<br />state: Bihar<br />completeness:  19.0","year: 2015<br />state: Bihar<br />completeness:  20.8","year: 2016<br />state: Bihar<br />completeness:  20.9","year: 2017<br />state: Bihar<br />completeness:  30.8","year: 2018<br />state: Bihar<br />completeness:  22.7","year: 2019<br />state: Bihar<br />completeness:  38.1","year: 2020<br />state: Bihar<br />completeness:  44.9","year: 2021<br />state: Bihar<br />completeness:  51.6"],["year: 2014<br />state: Assam<br />completeness:  33.3","year: 2015<br />state: Assam<br />completeness:  34.3","year: 2016<br />state: Assam<br />completeness:  45.4","year: 2017<br />state: Assam<br />completeness:  61.7","year: 2018<br />state: Assam<br />completeness:  48.7","year: 2019<br />state: Assam<br />completeness:  52.7","year: 2020<br />state: Assam<br />completeness:  63.6","year: 2021<br />state: Assam<br />completeness:  65.4"],["year: 2014<br />state: Uttar Pradesh<br />completeness:  40.1","year: 2015<br />state: Uttar Pradesh<br />completeness:  38.0","year: 2016<br />state: Uttar Pradesh<br />completeness:  34.6","year: 2017<br />state: Uttar Pradesh<br />completeness:  31.8","year: 2018<br />state: Uttar Pradesh<br />completeness:  49.6","year: 2019<br />state: Uttar Pradesh<br />completeness:  49.9","year: 2020<br />state: Uttar Pradesh<br />completeness:  41.7","year: 2021<br />state: Uttar Pradesh<br />completeness:  59.8"],["year: 2014<br />state: Telangana<br />completeness:  57.3","year: 2015<br />state: Telangana<br />completeness:  64.2","year: 2016<br />state: Telangana<br />completeness:  71.8","year: 2017<br />state: Telangana<br />completeness:  53.9","year: 2018<br />state: Telangana<br />completeness:  41.6","year: 2019<br />state: Telangana<br />completeness:  69.0","year: 2020<br />state: Telangana<br />completeness:  60.2","year: 2021<br />state: Telangana<br />completeness:  76.8"],["year: 2014<br />state: Jammu And Kashmir<br />completeness:  69.8","year: 2015<br />state: Jammu And Kashmir<br />completeness:  66.2","year: 2016<br />state: Jammu And Kashmir<br />completeness:  61.8","year: 2017<br />state: Jammu And Kashmir<br />completeness:  62.7","year: 2018<br />state: Jammu And Kashmir<br />completeness:  66.4","year: 2019<br />state: Jammu And Kashmir<br />completeness:  79.2","year: 2020<br />state: Jammu And Kashmir<br />completeness:  79.5","year: 2021<br />state: Jammu And Kashmir<br />completeness:  67.1"],["year: 2014<br />state: Himachal Pradesh<br />completeness:  90.6","year: 2015<br />state: Himachal Pradesh<br />completeness:  93.0","year: 2016<br />state: Himachal Pradesh<br />completeness:  69.3","year: 2017<br />state: Himachal Pradesh<br />completeness:  74.8","year: 2018<br />state: Himachal Pradesh<br />completeness:  78.1","year: 2019<br />state: Himachal Pradesh<br />completeness:  75.6","year: 2020<br />state: Himachal Pradesh<br />completeness:  76.9","year: 2021<br />state: Himachal Pradesh<br />completeness:  74.3"],["year: 2014<br />state: Uttarakhand<br />completeness:  49.7","year: 2015<br />state: Uttarakhand<br />completeness:  53.9","year: 2016<br />state: Uttarakhand<br />completeness:  58.8","year: 2017<br />state: Uttarakhand<br />completeness:  35.5","year: 2018<br />state: Uttarakhand<br />completeness:  51.6","year: 2019<br />state: Uttarakhand<br />completeness:  69.7","year: 2020<br />state: Uttarakhand<br />completeness:  64.2","year: 2021<br />state: Uttarakhand<br />completeness:  82.4"],["year: 2014<br />state: Rajasthan<br />completeness:  72.0","year: 2015<br />state: Rajasthan<br />completeness:  70.3","year: 2016<br />state: Rajasthan<br />completeness:  73.0","year: 2017<br />state: Rajasthan<br />completeness:  70.1","year: 2018<br />state: Rajasthan<br />completeness:  68.8","year: 2019<br />state: Rajasthan<br />completeness:  73.8","year: 2020<br />state: Rajasthan<br />completeness:  83.1","year: 2021<br />state: Rajasthan<br />completeness:  77.9"],["year: 2014<br />state: West Bengal<br />completeness:  56.2","year: 2015<br />state: West Bengal<br />completeness:  60.6","year: 2016<br />state: West Bengal<br />completeness:  64.3","year: 2017<br />state: West Bengal<br />completeness:  61.1","year: 2018<br />state: West Bengal<br />completeness:  70.4","year: 2019<br />state: West Bengal<br />completeness:  81.7","year: 2020<br />state: West Bengal<br />completeness:  83.2","year: 2021<br />state: West Bengal<br />completeness:  79.8"],["year: 2014<br />state: Haryana<br />completeness:  76.4","year: 2015<br />state: Haryana<br />completeness:  76.9","year: 2016<br />state: Haryana<br />completeness:  86.1","year: 2017<br />state: Haryana<br />completeness:  81.5","year: 2018<br />state: Haryana<br />completeness:  85.3","year: 2019<br />state: Haryana<br />completeness:  82.2","year: 2020<br />state: Haryana<br />completeness:  86.5","year: 2021<br />state: Haryana<br />completeness:  81.4"],["year: 2014<br />state: Punjab<br />completeness: 102.6","year: 2015<br />state: Punjab<br />completeness:  98.2","year: 2016<br />state: Punjab<br />completeness: 110.3","year: 2017<br />state: Punjab<br />completeness:  90.2","year: 2018<br />state: Punjab<br />completeness:  94.0","year: 2019<br />state: Punjab<br />completeness:  88.2","year: 2020<br />state: Punjab<br />completeness:  86.1","year: 2021<br />state: Punjab<br />completeness:  85.8"],["year: 2014<br />state: Maharashtra<br />completeness:  85.5","year: 2015<br />state: Maharashtra<br />completeness:  78.6","year: 2016<br />state: Maharashtra<br />completeness:  76.2","year: 2017<br />state: Maharashtra<br />completeness:  69.9","year: 2018<br />state: Maharashtra<br />completeness:  76.5","year: 2019<br />state: Maharashtra<br />completeness:  78.2","year: 2020<br />state: Maharashtra<br />completeness:  83.3","year: 2021<br />state: Maharashtra<br />completeness:  90.0"],["year: 2014<br />state: Chhattisgarh<br />completeness:  65.2","year: 2015<br />state: Chhattisgarh<br />completeness:  63.5","year: 2016<br />state: Chhattisgarh<br />completeness:  70.1","year: 2017<br />state: Chhattisgarh<br />completeness:  67.4","year: 2018<br />state: Chhattisgarh<br />completeness:  56.3","year: 2019<br />state: Chhattisgarh<br />completeness:  64.3","year: 2020<br />state: Chhattisgarh<br />completeness:  59.0","year: 2021<br />state: Chhattisgarh<br />completeness:  88.1"],["year: 2014<br />state: Karnataka<br />completeness:  69.9","year: 2015<br />state: Karnataka<br />completeness:  62.8","year: 2016<br />state: Karnataka<br />completeness:  63.9","year: 2017<br />state: Karnataka<br />completeness:  75.6","year: 2018<br />state: Karnataka<br />completeness:  74.0","year: 2019<br />state: Karnataka<br />completeness:  82.1","year: 2020<br />state: Karnataka<br />completeness:  85.7","year: 2021<br />state: Karnataka<br />completeness:  85.7"],["year: 2014<br />state: Madhya Pradesh<br />completeness:  55.7","year: 2015<br />state: Madhya Pradesh<br />completeness:  47.1","year: 2016<br />state: Madhya Pradesh<br />completeness:  50.9","year: 2017<br />state: Madhya Pradesh<br />completeness:  54.0","year: 2018<br />state: Madhya Pradesh<br />completeness:  57.3","year: 2019<br />state: Madhya Pradesh<br />completeness:  63.5","year: 2020<br />state: Madhya Pradesh<br />completeness:  70.1","year: 2021<br />state: Madhya Pradesh<br />completeness:  85.1"],["year: 2014<br />state: Kerala<br />completeness: 102.5","year: 2015<br />state: Kerala<br />completeness: 104.7","year: 2016<br />state: Kerala<br />completeness:  87.0","year: 2017<br />state: Kerala<br />completeness:  93.9","year: 2018<br />state: Kerala<br />completeness:  90.9","year: 2019<br />state: Kerala<br />completeness:  92.8","year: 2020<br />state: Kerala<br />completeness:  84.1","year: 2021<br />state: Kerala<br />completeness:  91.6"],["year: 2014<br />state: Gujarat<br />completeness:  76.5","year: 2015<br />state: Gujarat<br />completeness:  89.1","year: 2016<br />state: Gujarat<br />completeness:  89.4","year: 2017<br />state: Gujarat<br />completeness:  77.8","year: 2018<br />state: Gujarat<br />completeness:  93.2","year: 2019<br />state: Gujarat<br />completeness:  96.4","year: 2020<br />state: Gujarat<br />completeness: 104.8","year: 2021<br />state: Gujarat<br />completeness: 105.0"],["year: 2014<br />state: Andhra Pradesh<br />completeness:  77.2","year: 2015<br />state: Andhra Pradesh<br />completeness:  78.5","year: 2016<br />state: Andhra Pradesh<br />completeness:  64.1","year: 2017<br />state: Andhra Pradesh<br />completeness:  65.2","year: 2018<br />state: Andhra Pradesh<br />completeness:  72.3","year: 2019<br />state: Andhra Pradesh<br />completeness:  76.0","year: 2020<br />state: Andhra Pradesh<br />completeness:  87.5","year: 2021<br />state: Andhra Pradesh<br />completeness: 100.8"],["year: 2014<br />state: Odisha<br />completeness:  89.6","year: 2015<br />state: Odisha<br />completeness:  90.3","year: 2016<br />state: Odisha<br />completeness:  94.8","year: 2017<br />state: Odisha<br />completeness:  87.7","year: 2018<br />state: Odisha<br />completeness:  87.1","year: 2019<br />state: Odisha<br />completeness:  93.3","year: 2020<br />state: Odisha<br />completeness:  92.7","year: 2021<br />state: Odisha<br />completeness:  98.4"],["year: 2014<br />state: Tamil Nadu<br />completeness:  91.7","year: 2015<br />state: Tamil Nadu<br />completeness:  97.0","year: 2016<br />state: Tamil Nadu<br />completeness:  97.6","year: 2017<br />state: Tamil Nadu<br />completeness:  94.5","year: 2018<br />state: Tamil Nadu<br />completeness:  95.3","year: 2019<br />state: Tamil Nadu<br />completeness: 113.3","year: 2020<br />state: Tamil Nadu<br />completeness: 120.4","year: 2021<br />state: Tamil Nadu<br />completeness: 123.5"]],"colorscale":[[0,"#FAEBDD"],[0.017224880382775126,"#FAE7D8"],[0.018181818181818167,"#FAE7D7"],[0.035406698564593296,"#FAE4D2"],[0.11291866028708135,"#F9D4BB"],[0.12248803827751197,"#F9D2B8"],[0.13684210526315788,"#F9CFB4"],[0.13971291866028709,"#F9CEB3"],[0.14354066985645933,"#F9CEB2"],[0.14641148325358849,"#F8CDB1"],[0.14928229665071771,"#F8CCB0"],[0.15789473684210525,"#F8CBAE"],[0.18181818181818182,"#F7C6A7"],[0.1827751196172249,"#F7C6A6"],[0.20191387559808613,"#F7C2A1"],[0.21052631578947367,"#F7C09E"],[0.21244019138755985,"#F6BF9E"],[0.21626794258373208,"#F6BF9C"],[0.21722488038277515,"#F6BF9C"],[0.24784688995215309,"#F6B894"],[0.25263157894736843,"#F6B793"],[0.26889952153110047,"#F7B38F"],[0.27177033492822966,"#F7B38E"],[0.28421052631578952,"#F7B08B"],[0.29282296650717704,"#F7AE89"],[0.29377990430622014,"#F7AE89"],[0.29569377990430623,"#F7AD88"],[0.30526315789473685,"#F7AB86"],[0.31196172248803827,"#F7AA84"],[0.3186602870813397,"#F7A883"],[0.32248803827751199,"#F7A882"],[0.3339712918660287,"#F7A57F"],[0.3349282296650718,"#F7A57F"],[0.35119617224880384,"#F7A17B"],[0.35598086124401918,"#F7A07A"],[0.35693779904306216,"#F6A079"],[0.36650717703349278,"#F69E77"],[0.38086124401913873,"#F69B73"],[0.38277511961722488,"#F69A73"],[0.38755980861244022,"#F69972"],[0.39043062200956935,"#F69871"],[0.39425837320574164,"#F69870"],[0.39808612440191388,"#F6976F"],[0.40287081339712921,"#F6966E"],[0.40861244019138759,"#F6946D"],[0.40956937799043058,"#F6946D"],[0.41818181818181821,"#F6926A"],[0.4191387559808612,"#F6926A"],[0.42583732057416268,"#F69069"],[0.42679425837320578,"#F59068"],[0.42966507177033492,"#F59068"],[0.43157894736842101,"#F58F67"],[0.43253588516746416,"#F58F67"],[0.43349282296650715,"#F58F67"],[0.44210526315789478,"#F58D65"],[0.44401913875598092,"#F58C64"],[0.4516746411483254,"#F58A63"],[0.45358851674641154,"#F58A62"],[0.46028708133971286,"#F58861"],[0.46315789473684216,"#F58861"],[0.47655502392344495,"#F4855F"],[0.4784688995215311,"#F4845E"],[0.48133971291866023,"#F4845E"],[0.48516746411483258,"#F4835D"],[0.48612440191387557,"#F4825D"],[0.48708133971291873,"#F4825D"],[0.48899521531100471,"#F4825C"],[0.49090909090909091,"#F4815C"],[0.49186602870813401,"#F4815C"],[0.50526315789473686,"#F47E5A"],[0.50717703349282295,"#F47E59"],[0.51004784688995208,"#F47D59"],[0.51674641148325362,"#F37B58"],[0.52440191387559809,"#F37957"],[0.52631578947368418,"#F37956"],[0.52918660287081332,"#F37856"],[0.53397129186602865,"#F37755"],[0.54162679425837312,"#F37554"],[0.54545454545454541,"#F37453"],[0.54736842105263162,"#F37453"],[0.54928229665071771,"#F37353"],[0.55023923444976075,"#F37353"],[0.55311004784688989,"#F27252"],[0.55406698564593304,"#F27252"],[0.55693779904306218,"#F27151"],[0.56267942583732056,"#F27051"],[0.56363636363636371,"#F27050"],[0.56555023923444969,"#F26F50"],[0.56650717703349285,"#F26F50"],[0.56937799043062198,"#F26E4F"],[0.57033492822966503,"#F26E4F"],[0.57607655502392352,"#F26D4E"],[0.57894736842105265,"#F26C4E"],[0.58181818181818179,"#F26B4D"],[0.59712918660287084,"#F1674B"],[0.59808612440191389,"#F1674B"],[0.59999999999999998,"#F1664B"],[0.60382775119617216,"#F1654A"],[0.60478468899521531,"#F1654A"],[0.60669856459330151,"#F1654A"],[0.61339712918660283,"#F06348"],[0.61435406698564599,"#F06348"],[0.61531100478468892,"#F06248"],[0.62296650717703339,"#F06047"],[0.63253588516746406,"#F05E45"],[0.63444976076555026,"#F05D45"],[0.63636363636363635,"#F05D45"],[0.63827751196172255,"#EF5C45"],[0.63923444976076549,"#EF5C44"],[0.64210526315789473,"#EF5B44"],[0.64593301435406703,"#EF5A43"],[0.65071770334928225,"#EF5943"],[0.6516746411483253,"#EF5842"],[0.65550239234449759,"#EF5742"],[0.65741626794258379,"#EF5742"],[0.66124401913875597,"#EF5641"],[0.66220095693779912,"#EF5541"],[0.67081339712918653,"#EE5340"],[0.67368421052631589,"#EE523F"],[0.67559808612440186,"#EE523F"],[0.67942583732057416,"#ED513F"],[0.68133971291866036,"#ED5140"],[0.68229665071770329,"#ED5040"],[0.68516746411483254,"#ED5040"],[0.68803827751196178,"#EC4F40"],[0.6947368421052631,"#EB4E40"],[0.69569377990430625,"#EB4E40"],[0.70526315789473681,"#EA4C41"],[0.70622009569377986,"#EA4C41"],[0.70813397129186606,"#EA4C41"],[0.71004784688995215,"#EA4B41"],[0.7110047846889952,"#E94B42"],[0.71674641148325369,"#E94A42"],[0.71770334928229662,"#E94A42"],[0.72248803827751196,"#E84942"],[0.72535885167464109,"#E84842"],[0.73014354066985643,"#E74743"],[0.74066985645933014,"#E64543"],[0.74641148325358853,"#E54444"],[0.7521531100478468,"#E44344"],[0.75789473684210529,"#E44244"],[0.75980861244019149,"#E34245"],[0.7827751196172249,"#E13D46"],[0.79904306220095689,"#DF3947"],[0.79999999999999993,"#DE3947"],[0.82009569377990432,"#DC3548"],[0.82105263157894737,"#DC3448"],[0.82296650717703346,"#DC3448"],[0.87368421052631573,"#D5274B"],[0.90239234449760763,"#D1204C"],[0.97033492822966516,"#C31E51"],[1,"#BC1D53"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"z":[[0.43580131208997186,0.34770384254920333,0.44423617619493899,0.3195876288659793,0.22399250234301782,0.26897844423617617,0.28491096532333648,0.28491096532333648],[0,0.10871602624179942,0.028116213683224024,0.13402061855670103,0.040299906279287728,0.25117150890346768,0.31490159325210865,0.31021555763823799],[0.29334582942830367,0.30365510777881916,0.34395501405810686,0.28491096532333648,0.37863167760074967,0.46298031865042166,0.500468603561387,0.40581068416119959],[0.13683223992502341,0.112464854732896,0.073102155576382388,0.045923149015932536,0.22305529522024367,0.23898781630740396,0.21649484536082472,0.52858481724461093],[0.35520149953139635,0.42361761949390819,0.49765698219306459,0.31677600749765694,0.19025304592314901,0.50234301780693524,0.40299906279287723,0.44611059044048729],[0.32708528584817237,0.34676663542642922,0.31396438612933458,0.33177132146204302,0.2924086223055295,0.34957825679475163,0.52483598875351456,0.57357075913776945],[0.48922211808809746,0.52577319587628857,0.41143392689784436,0.46672914714151825,0.41424554826616683,0.46391752577319584,0.44236176194939081,0.51546391752577314],[0.20993439550140583,0.30271790065604492,0.27928772258669166,0.11621368322399252,0.30740393626991563,0.4845360824742268,0.39831302717900657,0.49297094657919394],[0.57919400187441417,0.59044048734770382,0.58762886597938147,0.61480787253983127,0.66260543580131215,0.63542642924086223,0.61855670103092786,0.58294283036551076],[0.32521087160262419,0.39737582005623234,0.46860356138706655,0.42736644798500462,0.45735707591377689,0.57731958762886593,0.57919400187441417,0.57919400187441417],[0.62417994376757258,0.6607310215557638,0.73477038425492025,0.6476101218369259,0.60918462980318644,0.58856607310215558,0.63448922211808811,0.59512652296157453],[0.75726335520149946,0.77507029053420806,0.82286785379568883,0.60449859418931584,0.62324273664479846,0.61855670103092786,0.5585754451733832,0.56326148078725391],[0.59044048734770382,0.63074039362699152,0.54170571696344894,0.52014995313964385,0.51452671040299902,0.53514526710402988,0.63261480787253976,0.59793814432989689],[0.47703842549203362,0.43486410496719768,0.46954076850984061,0.41237113402061853,0.38706654170571692,0.4845360824742268,0.40487347703842552,0.65229615745079661],[0.59700093720712277,0.52108716026241797,0.56982193064667286,0.65791940018744144,0.67572633552014993,0.65510777881911897,0.69447047797563255,0.68697282099343948],[0.25679475164011245,0.19400187441424555,0.26429240862230552,0.34301780693533263,0.45267104029990624,0.56607310215557627,0.58388003748828488,0.7010309278350515],[0.75070290534208051,0.69821930646672914,0.57075913776944698,0.64011246485473283,0.56607310215557627,0.5267104029990628,0.47422680412371127,0.6476101218369259],[0.6073102155576382,0.73102155576382377,0.70290534208059985,0.55576382380506084,0.64104967197750695,0.7094657919400188,0.82661668228678542,0.75820056232427357],[0.4620431115276476,0.45829428303655101,0.59325210871602618,0.61949390815370187,0.72914714151827553,0.80224929709465786,0.88003748828491091,0.79756326148078716],[0.61012183692596056,0.62886597938144317,0.69634489222118079,0.6476101218369259,0.69353327085285843,0.73195876288659789,0.79006560449859409,0.82942830365510778],[0.68978444236176184,0.71508903467666352,0.74507966260543579,0.74882849109653227,0.7638238050609184,0.91190253045923142,1,0.98781630740393611]],"text":[["year: 2014<br />state: Jharkhand<br />completeness:  76.2","year: 2015<br />state: Jharkhand<br />completeness:  66.8","year: 2016<br />state: Jharkhand<br />completeness:  77.1","year: 2017<br />state: Jharkhand<br />completeness:  63.8","year: 2018<br />state: Jharkhand<br />completeness:  53.6","year: 2019<br />state: Jharkhand<br />completeness:  58.4","year: 2020<br />state: Jharkhand<br />completeness:  60.1","year: 2021<br />state: Jharkhand<br />completeness:  60.1"],["year: 2014<br />state: Bihar<br />completeness:  29.7","year: 2015<br />state: Bihar<br />completeness:  41.3","year: 2016<br />state: Bihar<br />completeness:  32.7","year: 2017<br />state: Bihar<br />completeness:  44.0","year: 2018<br />state: Bihar<br />completeness:  34.0","year: 2019<br />state: Bihar<br />completeness:  56.5","year: 2020<br />state: Bihar<br />completeness:  63.3","year: 2021<br />state: Bihar<br />completeness:  62.8"],["year: 2014<br />state: Assam<br />completeness:  61.0","year: 2015<br />state: Assam<br />completeness:  62.1","year: 2016<br />state: Assam<br />completeness:  66.4","year: 2017<br />state: Assam<br />completeness:  60.1","year: 2018<br />state: Assam<br />completeness:  70.1","year: 2019<br />state: Assam<br />completeness:  79.1","year: 2020<br />state: Assam<br />completeness:  83.1","year: 2021<br />state: Assam<br />completeness:  73.0"],["year: 2014<br />state: Uttar Pradesh<br />completeness:  44.3","year: 2015<br />state: Uttar Pradesh<br />completeness:  41.7","year: 2016<br />state: Uttar Pradesh<br />completeness:  37.5","year: 2017<br />state: Uttar Pradesh<br />completeness:  34.6","year: 2018<br />state: Uttar Pradesh<br />completeness:  53.5","year: 2019<br />state: Uttar Pradesh<br />completeness:  55.2","year: 2020<br />state: Uttar Pradesh<br />completeness:  52.8","year: 2021<br />state: Uttar Pradesh<br />completeness:  86.1"],["year: 2014<br />state: Telangana<br />completeness:  67.6","year: 2015<br />state: Telangana<br />completeness:  74.9","year: 2016<br />state: Telangana<br />completeness:  82.8","year: 2017<br />state: Telangana<br />completeness:  63.5","year: 2018<br />state: Telangana<br />completeness:  50.0","year: 2019<br />state: Telangana<br />completeness:  83.3","year: 2020<br />state: Telangana<br />completeness:  72.7","year: 2021<br />state: Telangana<br />completeness:  77.3"],["year: 2014<br />state: Jammu And Kashmir<br />completeness:  64.6","year: 2015<br />state: Jammu And Kashmir<br />completeness:  66.7","year: 2016<br />state: Jammu And Kashmir<br />completeness:  63.2","year: 2017<br />state: Jammu And Kashmir<br />completeness:  65.1","year: 2018<br />state: Jammu And Kashmir<br />completeness:  60.9","year: 2019<br />state: Jammu And Kashmir<br />completeness:  67.0","year: 2020<br />state: Jammu And Kashmir<br />completeness:  85.7","year: 2021<br />state: Jammu And Kashmir<br />completeness:  90.9"],["year: 2014<br />state: Himachal Pradesh<br />completeness:  81.9","year: 2015<br />state: Himachal Pradesh<br />completeness:  85.8","year: 2016<br />state: Himachal Pradesh<br />completeness:  73.6","year: 2017<br />state: Himachal Pradesh<br />completeness:  79.5","year: 2018<br />state: Himachal Pradesh<br />completeness:  73.9","year: 2019<br />state: Himachal Pradesh<br />completeness:  79.2","year: 2020<br />state: Himachal Pradesh<br />completeness:  76.9","year: 2021<br />state: Himachal Pradesh<br />completeness:  84.7"],["year: 2014<br />state: Uttarakhand<br />completeness:  52.1","year: 2015<br />state: Uttarakhand<br />completeness:  62.0","year: 2016<br />state: Uttarakhand<br />completeness:  59.5","year: 2017<br />state: Uttarakhand<br />completeness:  42.1","year: 2018<br />state: Uttarakhand<br />completeness:  62.5","year: 2019<br />state: Uttarakhand<br />completeness:  81.4","year: 2020<br />state: Uttarakhand<br />completeness:  72.2","year: 2021<br />state: Uttarakhand<br />completeness:  82.3"],["year: 2014<br />state: Rajasthan<br />completeness:  91.5","year: 2015<br />state: Rajasthan<br />completeness:  92.7","year: 2016<br />state: Rajasthan<br />completeness:  92.4","year: 2017<br />state: Rajasthan<br />completeness:  95.3","year: 2018<br />state: Rajasthan<br />completeness: 100.4","year: 2019<br />state: Rajasthan<br />completeness:  97.5","year: 2020<br />state: Rajasthan<br />completeness:  95.7","year: 2021<br />state: Rajasthan<br />completeness:  91.9"],["year: 2014<br />state: West Bengal<br />completeness:  64.4","year: 2015<br />state: West Bengal<br />completeness:  72.1","year: 2016<br />state: West Bengal<br />completeness:  79.7","year: 2017<br />state: West Bengal<br />completeness:  75.3","year: 2018<br />state: West Bengal<br />completeness:  78.5","year: 2019<br />state: West Bengal<br />completeness:  91.3","year: 2020<br />state: West Bengal<br />completeness:  91.5","year: 2021<br />state: West Bengal<br />completeness:  91.5"],["year: 2014<br />state: Haryana<br />completeness:  96.3","year: 2015<br />state: Haryana<br />completeness: 100.2","year: 2016<br />state: Haryana<br />completeness: 108.1","year: 2017<br />state: Haryana<br />completeness:  98.8","year: 2018<br />state: Haryana<br />completeness:  94.7","year: 2019<br />state: Haryana<br />completeness:  92.5","year: 2020<br />state: Haryana<br />completeness:  97.4","year: 2021<br />state: Haryana<br />completeness:  93.2"],["year: 2014<br />state: Punjab<br />completeness: 110.5","year: 2015<br />state: Punjab<br />completeness: 112.4","year: 2016<br />state: Punjab<br />completeness: 117.5","year: 2017<br />state: Punjab<br />completeness:  94.2","year: 2018<br />state: Punjab<br />completeness:  96.2","year: 2019<br />state: Punjab<br />completeness:  95.7","year: 2020<br />state: Punjab<br />completeness:  89.3","year: 2021<br />state: Punjab<br />completeness:  89.8"],["year: 2014<br />state: Maharashtra<br />completeness:  92.7","year: 2015<br />state: Maharashtra<br />completeness:  97.0","year: 2016<br />state: Maharashtra<br />completeness:  87.5","year: 2017<br />state: Maharashtra<br />completeness:  85.2","year: 2018<br />state: Maharashtra<br />completeness:  84.6","year: 2019<br />state: Maharashtra<br />completeness:  86.8","year: 2020<br />state: Maharashtra<br />completeness:  97.2","year: 2021<br />state: Maharashtra<br />completeness:  93.5"],["year: 2014<br />state: Chhattisgarh<br />completeness:  80.6","year: 2015<br />state: Chhattisgarh<br />completeness:  76.1","year: 2016<br />state: Chhattisgarh<br />completeness:  79.8","year: 2017<br />state: Chhattisgarh<br />completeness:  73.7","year: 2018<br />state: Chhattisgarh<br />completeness:  71.0","year: 2019<br />state: Chhattisgarh<br />completeness:  81.4","year: 2020<br />state: Chhattisgarh<br />completeness:  72.9","year: 2021<br />state: Chhattisgarh<br />completeness:  99.3"],["year: 2014<br />state: Karnataka<br />completeness:  93.4","year: 2015<br />state: Karnataka<br />completeness:  85.3","year: 2016<br />state: Karnataka<br />completeness:  90.5","year: 2017<br />state: Karnataka<br />completeness:  99.9","year: 2018<br />state: Karnataka<br />completeness: 101.8","year: 2019<br />state: Karnataka<br />completeness:  99.6","year: 2020<br />state: Karnataka<br />completeness: 103.8","year: 2021<br />state: Karnataka<br />completeness: 103.0"],["year: 2014<br />state: Madhya Pradesh<br />completeness:  57.1","year: 2015<br />state: Madhya Pradesh<br />completeness:  50.4","year: 2016<br />state: Madhya Pradesh<br />completeness:  57.9","year: 2017<br />state: Madhya Pradesh<br />completeness:  66.3","year: 2018<br />state: Madhya Pradesh<br />completeness:  78.0","year: 2019<br />state: Madhya Pradesh<br />completeness:  90.1","year: 2020<br />state: Madhya Pradesh<br />completeness:  92.0","year: 2021<br />state: Madhya Pradesh<br />completeness: 104.5"],["year: 2014<br />state: Kerala<br />completeness: 109.8","year: 2015<br />state: Kerala<br />completeness: 104.2","year: 2016<br />state: Kerala<br />completeness:  90.6","year: 2017<br />state: Kerala<br />completeness:  98.0","year: 2018<br />state: Kerala<br />completeness:  90.1","year: 2019<br />state: Kerala<br />completeness:  85.9","year: 2020<br />state: Kerala<br />completeness:  80.3","year: 2021<br />state: Kerala<br />completeness:  98.8"],["year: 2014<br />state: Gujarat<br />completeness:  94.5","year: 2015<br />state: Gujarat<br />completeness: 107.7","year: 2016<br />state: Gujarat<br />completeness: 104.7","year: 2017<br />state: Gujarat<br />completeness:  89.0","year: 2018<br />state: Gujarat<br />completeness:  98.1","year: 2019<br />state: Gujarat<br />completeness: 105.4","year: 2020<br />state: Gujarat<br />completeness: 117.9","year: 2021<br />state: Gujarat<br />completeness: 110.6"],["year: 2014<br />state: Andhra Pradesh<br />completeness:  79.0","year: 2015<br />state: Andhra Pradesh<br />completeness:  78.6","year: 2016<br />state: Andhra Pradesh<br />completeness:  93.0","year: 2017<br />state: Andhra Pradesh<br />completeness:  95.8","year: 2018<br />state: Andhra Pradesh<br />completeness: 107.5","year: 2019<br />state: Andhra Pradesh<br />completeness: 115.3","year: 2020<br />state: Andhra Pradesh<br />completeness: 123.6","year: 2021<br />state: Andhra Pradesh<br />completeness: 114.8"],["year: 2014<br />state: Odisha<br />completeness:  94.8","year: 2015<br />state: Odisha<br />completeness:  96.8","year: 2016<br />state: Odisha<br />completeness: 104.0","year: 2017<br />state: Odisha<br />completeness:  98.8","year: 2018<br />state: Odisha<br />completeness: 103.7","year: 2019<br />state: Odisha<br />completeness: 107.8","year: 2020<br />state: Odisha<br />completeness: 114.0","year: 2021<br />state: Odisha<br />completeness: 118.2"],["year: 2014<br />state: Tamil Nadu<br />completeness: 103.3","year: 2015<br />state: Tamil Nadu<br />completeness: 106.0","year: 2016<br />state: Tamil Nadu<br />completeness: 109.2","year: 2017<br />state: Tamil Nadu<br />completeness: 109.6","year: 2018<br />state: Tamil Nadu<br />completeness: 111.2","year: 2019<br />state: Tamil Nadu<br />completeness: 127.0","year: 2020<br />state: Tamil Nadu<br />completeness: 136.4","year: 2021<br />state: Tamil Nadu<br />completeness: 135.1"]],"colorscale":[[0,"#F9D6BE"],[0.028116213683224024,"#F9D0B6"],[0.040299906279287728,"#F9CEB2"],[0.045923149015932536,"#F8CCB0"],[0.073102155576382388,"#F8C7A8"],[0.10871602624179942,"#F6BF9D"],[0.112464854732896,"#F6BF9C"],[0.11621368322399252,"#F6BE9B"],[0.13402061855670103,"#F6BA96"],[0.13683223992502341,"#F6B996"],[0.19025304592314901,"#F7AD88"],[0.19400187441424555,"#F7AC87"],[0.20993439550140583,"#F7A983"],[0.21649484536082472,"#F7A782"],[0.22305529522024367,"#F7A680"],[0.22399250234301782,"#F7A680"],[0.23898781630740396,"#F7A27C"],[0.25117150890346768,"#F69F79"],[0.25679475164011245,"#F69E77"],[0.26429240862230552,"#F69C76"],[0.26897844423617617,"#F69B74"],[0.27928772258669166,"#F69972"],[0.28491096532333648,"#F69870"],[0.2924086223055295,"#F6966F"],[0.29334582942830367,"#F6966E"],[0.30271790065604492,"#F6946C"],[0.30365510777881916,"#F6936C"],[0.30740393626991563,"#F6936B"],[0.31021555763823799,"#F6926A"],[0.31396438612933458,"#F69169"],[0.31490159325210865,"#F69169"],[0.31677600749765694,"#F69069"],[0.3195876288659793,"#F59068"],[0.32521087160262419,"#F58E67"],[0.32708528584817237,"#F58E66"],[0.33177132146204302,"#F58D65"],[0.34301780693533263,"#F58A62"],[0.34395501405810686,"#F58A62"],[0.34676663542642922,"#F58962"],[0.34770384254920333,"#F58962"],[0.34957825679475163,"#F58961"],[0.35520149953139635,"#F58760"],[0.37863167760074967,"#F4825C"],[0.38706654170571692,"#F4805B"],[0.39737582005623234,"#F47D59"],[0.39831302717900657,"#F47D59"],[0.40299906279287723,"#F47C58"],[0.40487347703842552,"#F37B58"],[0.40581068416119959,"#F37B58"],[0.41143392689784436,"#F37A57"],[0.41237113402061853,"#F37A57"],[0.41424554826616683,"#F37957"],[0.42361761949390819,"#F37755"],[0.42736644798500462,"#F37654"],[0.43486410496719768,"#F37453"],[0.43580131208997186,"#F37453"],[0.44236176194939081,"#F27252"],[0.44423617619493899,"#F27252"],[0.44611059044048729,"#F27151"],[0.45267104029990624,"#F27050"],[0.45735707591377689,"#F26E4F"],[0.45829428303655101,"#F26E4F"],[0.4620431115276476,"#F26D4F"],[0.46298031865042166,"#F26D4F"],[0.46391752577319584,"#F26D4E"],[0.46672914714151825,"#F26C4E"],[0.46860356138706655,"#F26B4E"],[0.46954076850984061,"#F26B4D"],[0.47422680412371127,"#F16A4D"],[0.47703842549203362,"#F1694C"],[0.4845360824742268,"#F1674B"],[0.48922211808809746,"#F1664A"],[0.49297094657919394,"#F1654A"],[0.49765698219306459,"#F16449"],[0.500468603561387,"#F06348"],[0.50234301780693524,"#F06248"],[0.51452671040299902,"#F05F46"],[0.51546391752577314,"#F05F46"],[0.52014995313964385,"#F05E45"],[0.52108716026241797,"#F05D45"],[0.52483598875351456,"#EF5C45"],[0.52577319587628857,"#EF5C44"],[0.5267104029990628,"#EF5C44"],[0.52858481724461093,"#EF5B44"],[0.53514526710402988,"#EF5943"],[0.54170571696344894,"#EF5742"],[0.55576382380506084,"#EE5340"],[0.5585754451733832,"#EE523F"],[0.56326148078725391,"#EE513F"],[0.56607310215557627,"#ED513F"],[0.56982193064667286,"#ED5040"],[0.57075913776944698,"#ED5040"],[0.57357075913776945,"#EC4F40"],[0.57731958762886593,"#EC4F40"],[0.57919400187441417,"#EC4E40"],[0.58294283036551076,"#EB4E41"],[0.58388003748828488,"#EB4D41"],[0.58762886597938147,"#EB4D41"],[0.58856607310215558,"#EA4D41"],[0.59044048734770382,"#EA4C41"],[0.59325210871602618,"#EA4C41"],[0.59512652296157453,"#EA4B41"],[0.59700093720712277,"#E94B42"],[0.59793814432989689,"#E94B42"],[0.60449859418931584,"#E84942"],[0.6073102155576382,"#E84942"],[0.60918462980318644,"#E84942"],[0.61012183692596056,"#E84842"],[0.61480787253983127,"#E74743"],[0.61855670103092786,"#E74743"],[0.61949390815370187,"#E64743"],[0.62324273664479846,"#E64643"],[0.62417994376757258,"#E64643"],[0.62886597938144317,"#E54544"],[0.63074039362699152,"#E54444"],[0.63261480787253976,"#E54444"],[0.63448922211808811,"#E54344"],[0.63542642924086223,"#E44344"],[0.64011246485473283,"#E44244"],[0.64104967197750695,"#E44244"],[0.6476101218369259,"#E34145"],[0.65229615745079661,"#E24045"],[0.65510777881911897,"#E23F45"],[0.65791940018744144,"#E23F45"],[0.6607310215557638,"#E13E46"],[0.66260543580131215,"#E13E46"],[0.67572633552014993,"#DF3B46"],[0.68697282099343948,"#DE3847"],[0.68978444236176184,"#DE3847"],[0.69353327085285843,"#DD3747"],[0.69447047797563255,"#DD3748"],[0.69634489222118079,"#DD3648"],[0.69821930646672914,"#DC3648"],[0.7010309278350515,"#DC3548"],[0.70290534208059985,"#DC3548"],[0.7094657919400188,"#DB3348"],[0.71508903467666352,"#DA3249"],[0.72914714151827553,"#D92E49"],[0.73102155576382377,"#D82E4A"],[0.73195876288659789,"#D82E4A"],[0.73477038425492025,"#D82D4A"],[0.74507966260543579,"#D62A4A"],[0.74882849109653227,"#D6294A"],[0.75070290534208051,"#D6294B"],[0.75726335520149946,"#D5274B"],[0.75820056232427357,"#D5274B"],[0.7638238050609184,"#D4254B"],[0.77507029053420806,"#D3224C"],[0.79006560449859409,"#D0204D"],[0.79756326148078716,"#CE1F4D"],[0.80224929709465786,"#CD1F4E"],[0.82286785379568883,"#C91F4F"],[0.82661668228678542,"#C81F4F"],[0.82942830365510778,"#C71E50"],[0.88003748828491091,"#BC1D53"],[0.91190253045923142,"#B51C55"],[0.98781630740393611,"#A41A5A"],[1,"#A11A5B"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2014,2015,2016,2017,2018,2019,2020,2021],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"z":[[0.3854961832061069,0.37309160305343519,0.36068702290076343,0.26908396946564894,0.18129770992366415,0.22519083969465653,0.21660305343511457,0.26622137404580154],[0,0.059160305343511486,0.021946564885496192,0.12022900763358782,0.035305343511450413,0.21851145038167941,0.28625954198473286,0.31583969465648859],[0.22805343511450385,0.24045801526717564,0.31393129770992373,0.35209923664122139,0.34255725190839698,0.40267175572519087,0.47328244274809167,0.43416030534351158],[0.17461832061068711,0.15171755725190841,0.11259541984732831,0.087786259541984768,0.26335877862595425,0.27480916030534358,0.22805343511450385,0.49236641221374056],[0.36164122137404586,0.43225190839694666,0.50190839694656497,0.32538167938931306,0.20706106870229013,0.49904580152671768,0.40744274809160308,0.50381679389312994],[0.4017175572519085,0.4017175572519085,0.36450381679389321,0.38358778625954199,0.37213740458015271,0.45610687022900775,0.56297709923664141,0.52862595419847336],[0.58301526717557262,0.61450381679389332,0.45419847328244284,0.50763358778625955,0.49332061068702293,0.50667938931297718,0.50286259541984735,0.53244274809160319],[0.25572519083969475,0.33015267175572527,0.33587786259541991,0.14408396946564889,0.31774809160305351,0.49522900763358785,0.41889312977099241,0.54770992366412219],[0.56774809160305362,0.57156488549618334,0.58683206106870245,0.5896946564885498,0.609732824427481,0.61259541984732824,0.6469465648854964,0.59255725190839703],[0.34732824427480918,0.39980916030534358,0.45229007633587792,0.41793893129771004,0.47805343511450393,0.594465648854962,0.60591603053435128,0.59064885496183217],[0.60591603053435128,0.63358778625954215,0.71564885496183217,0.64122137404580148,0.63358778625954215,0.60496183206106879,0.64122137404580148,0.59637404580152686],[0.79293893129770998,0.7872137404580154,0.86450381679389321,0.64885496183206115,0.67748091603053451,0.6507633587786259,0.60782442748091614,0.60400763358778642],[0.61450381679389332,0.60496183206106879,0.54198473282442761,0.50477099236641232,0.53816793893129777,0.56011450381679395,0.63931297709923673,0.64980916030534353],[0.5009541984732826,0.47996183206106879,0.52385496183206115,0.45801526717557267,0.38740458015267182,0.46564885496183217,0.40076335877862607,0.66698473282442761],[0.55343511450381699,0.48187022900763371,0.51431297709923673,0.61450381679389332,0.61641221374045807,0.64312977099236657,0.67748091603053451,0.66984732824427484],[0.30057251908396954,0.22996183206106877,0.28721374045801534,0.34446564885496189,0.41889312977099241,0.50667938931297718,0.54389312977099247,0.67175572519083981],[0.79389312977099236,0.77099236641221403,0.61736641221374045,0.68606870229007655,0.63645038167938928,0.61927480916030553,0.55057251908396954,0.67366412213740468],[0.5887404580152672,0.7146946564885498,0.6994274809160308,0.56774809160305362,0.68416030534351147,0.734732824427481,0.83874045801526742,0.79389312977099236],[0.51145038167938939,0.5162213740458016,0.51812977099236657,0.54103053435114512,0.63167938931297707,0.68606870229007655,0.78148854961832082,0.79675572519083981],[0.64980916030534353,0.66698473282442761,0.72614503816793896,0.66507633587786263,0.68416030534351147,0.73377862595419863,0.75477099236641232,0.80057251908396965],[0.68702290076335892,0.72900763358778642,0.7452290076335879,0.73187022900763354,0.74904580152671763,0.90839694656488557,0.98854961832061083,1]],"text":[["year: 2014<br />state: Jharkhand<br />completeness:  64.8","year: 2015<br />state: Jharkhand<br />completeness:  63.5","year: 2016<br />state: Jharkhand<br />completeness:  62.2","year: 2017<br />state: Jharkhand<br />completeness:  52.6","year: 2018<br />state: Jharkhand<br />completeness:  43.4","year: 2019<br />state: Jharkhand<br />completeness:  48.0","year: 2020<br />state: Jharkhand<br />completeness:  47.1","year: 2021<br />state: Jharkhand<br />completeness:  52.3"],["year: 2014<br />state: Bihar<br />completeness:  24.4","year: 2015<br />state: Bihar<br />completeness:  30.6","year: 2016<br />state: Bihar<br />completeness:  26.7","year: 2017<br />state: Bihar<br />completeness:  37.0","year: 2018<br />state: Bihar<br />completeness:  28.1","year: 2019<br />state: Bihar<br />completeness:  47.3","year: 2020<br />state: Bihar<br />completeness:  54.4","year: 2021<br />state: Bihar<br />completeness:  57.5"],["year: 2014<br />state: Assam<br />completeness:  48.3","year: 2015<br />state: Assam<br />completeness:  49.6","year: 2016<br />state: Assam<br />completeness:  57.3","year: 2017<br />state: Assam<br />completeness:  61.3","year: 2018<br />state: Assam<br />completeness:  60.3","year: 2019<br />state: Assam<br />completeness:  66.6","year: 2020<br />state: Assam<br />completeness:  74.0","year: 2021<br />state: Assam<br />completeness:  69.9"],["year: 2014<br />state: Uttar Pradesh<br />completeness:  42.7","year: 2015<br />state: Uttar Pradesh<br />completeness:  40.3","year: 2016<br />state: Uttar Pradesh<br />completeness:  36.2","year: 2017<br />state: Uttar Pradesh<br />completeness:  33.6","year: 2018<br />state: Uttar Pradesh<br />completeness:  52.0","year: 2019<br />state: Uttar Pradesh<br />completeness:  53.2","year: 2020<br />state: Uttar Pradesh<br />completeness:  48.3","year: 2021<br />state: Uttar Pradesh<br />completeness:  76.0"],["year: 2014<br />state: Telangana<br />completeness:  62.3","year: 2015<br />state: Telangana<br />completeness:  69.7","year: 2016<br />state: Telangana<br />completeness:  77.0","year: 2017<br />state: Telangana<br />completeness:  58.5","year: 2018<br />state: Telangana<br />completeness:  46.1","year: 2019<br />state: Telangana<br />completeness:  76.7","year: 2020<br />state: Telangana<br />completeness:  67.1","year: 2021<br />state: Telangana<br />completeness:  77.2"],["year: 2014<br />state: Jammu And Kashmir<br />completeness:  66.5","year: 2015<br />state: Jammu And Kashmir<br />completeness:  66.5","year: 2016<br />state: Jammu And Kashmir<br />completeness:  62.6","year: 2017<br />state: Jammu And Kashmir<br />completeness:  64.6","year: 2018<br />state: Jammu And Kashmir<br />completeness:  63.4","year: 2019<br />state: Jammu And Kashmir<br />completeness:  72.2","year: 2020<br />state: Jammu And Kashmir<br />completeness:  83.4","year: 2021<br />state: Jammu And Kashmir<br />completeness:  79.8"],["year: 2014<br />state: Himachal Pradesh<br />completeness:  85.5","year: 2015<br />state: Himachal Pradesh<br />completeness:  88.8","year: 2016<br />state: Himachal Pradesh<br />completeness:  72.0","year: 2017<br />state: Himachal Pradesh<br />completeness:  77.6","year: 2018<br />state: Himachal Pradesh<br />completeness:  76.1","year: 2019<br />state: Himachal Pradesh<br />completeness:  77.5","year: 2020<br />state: Himachal Pradesh<br />completeness:  77.1","year: 2021<br />state: Himachal Pradesh<br />completeness:  80.2"],["year: 2014<br />state: Uttarakhand<br />completeness:  51.2","year: 2015<br />state: Uttarakhand<br />completeness:  59.0","year: 2016<br />state: Uttarakhand<br />completeness:  59.6","year: 2017<br />state: Uttarakhand<br />completeness:  39.5","year: 2018<br />state: Uttarakhand<br />completeness:  57.7","year: 2019<br />state: Uttarakhand<br />completeness:  76.3","year: 2020<br />state: Uttarakhand<br />completeness:  68.3","year: 2021<br />state: Uttarakhand<br />completeness:  81.8"],["year: 2014<br />state: Rajasthan<br />completeness:  83.9","year: 2015<br />state: Rajasthan<br />completeness:  84.3","year: 2016<br />state: Rajasthan<br />completeness:  85.9","year: 2017<br />state: Rajasthan<br />completeness:  86.2","year: 2018<br />state: Rajasthan<br />completeness:  88.3","year: 2019<br />state: Rajasthan<br />completeness:  88.6","year: 2020<br />state: Rajasthan<br />completeness:  92.2","year: 2021<br />state: Rajasthan<br />completeness:  86.5"],["year: 2014<br />state: West Bengal<br />completeness:  60.8","year: 2015<br />state: West Bengal<br />completeness:  66.3","year: 2016<br />state: West Bengal<br />completeness:  71.8","year: 2017<br />state: West Bengal<br />completeness:  68.2","year: 2018<br />state: West Bengal<br />completeness:  74.5","year: 2019<br />state: West Bengal<br />completeness:  86.7","year: 2020<br />state: West Bengal<br />completeness:  87.9","year: 2021<br />state: West Bengal<br />completeness:  86.3"],["year: 2014<br />state: Haryana<br />completeness:  87.9","year: 2015<br />state: Haryana<br />completeness:  90.8","year: 2016<br />state: Haryana<br />completeness:  99.4","year: 2017<br />state: Haryana<br />completeness:  91.6","year: 2018<br />state: Haryana<br />completeness:  90.8","year: 2019<br />state: Haryana<br />completeness:  87.8","year: 2020<br />state: Haryana<br />completeness:  91.6","year: 2021<br />state: Haryana<br />completeness:  86.9"],["year: 2014<br />state: Punjab<br />completeness: 107.5","year: 2015<br />state: Punjab<br />completeness: 106.9","year: 2016<br />state: Punjab<br />completeness: 115.0","year: 2017<br />state: Punjab<br />completeness:  92.4","year: 2018<br />state: Punjab<br />completeness:  95.4","year: 2019<br />state: Punjab<br />completeness:  92.6","year: 2020<br />state: Punjab<br />completeness:  88.1","year: 2021<br />state: Punjab<br />completeness:  87.7"],["year: 2014<br />state: Maharashtra<br />completeness:  88.8","year: 2015<br />state: Maharashtra<br />completeness:  87.8","year: 2016<br />state: Maharashtra<br />completeness:  81.2","year: 2017<br />state: Maharashtra<br />completeness:  77.3","year: 2018<br />state: Maharashtra<br />completeness:  80.8","year: 2019<br />state: Maharashtra<br />completeness:  83.1","year: 2020<br />state: Maharashtra<br />completeness:  91.4","year: 2021<br />state: Maharashtra<br />completeness:  92.5"],["year: 2014<br />state: Chhattisgarh<br />completeness:  76.9","year: 2015<br />state: Chhattisgarh<br />completeness:  74.7","year: 2016<br />state: Chhattisgarh<br />completeness:  79.3","year: 2017<br />state: Chhattisgarh<br />completeness:  72.4","year: 2018<br />state: Chhattisgarh<br />completeness:  65.0","year: 2019<br />state: Chhattisgarh<br />completeness:  73.2","year: 2020<br />state: Chhattisgarh<br />completeness:  66.4","year: 2021<br />state: Chhattisgarh<br />completeness:  94.3"],["year: 2014<br />state: Karnataka<br />completeness:  82.4","year: 2015<br />state: Karnataka<br />completeness:  74.9","year: 2016<br />state: Karnataka<br />completeness:  78.3","year: 2017<br />state: Karnataka<br />completeness:  88.8","year: 2018<br />state: Karnataka<br />completeness:  89.0","year: 2019<br />state: Karnataka<br />completeness:  91.8","year: 2020<br />state: Karnataka<br />completeness:  95.4","year: 2021<br />state: Karnataka<br />completeness:  94.6"],["year: 2014<br />state: Madhya Pradesh<br />completeness:  55.9","year: 2015<br />state: Madhya Pradesh<br />completeness:  48.5","year: 2016<br />state: Madhya Pradesh<br />completeness:  54.5","year: 2017<br />state: Madhya Pradesh<br />completeness:  60.5","year: 2018<br />state: Madhya Pradesh<br />completeness:  68.3","year: 2019<br />state: Madhya Pradesh<br />completeness:  77.5","year: 2020<br />state: Madhya Pradesh<br />completeness:  81.4","year: 2021<br />state: Madhya Pradesh<br />completeness:  94.8"],["year: 2014<br />state: Kerala<br />completeness: 107.6","year: 2015<br />state: Kerala<br />completeness: 105.2","year: 2016<br />state: Kerala<br />completeness:  89.1","year: 2017<br />state: Kerala<br />completeness:  96.3","year: 2018<br />state: Kerala<br />completeness:  91.1","year: 2019<br />state: Kerala<br />completeness:  89.3","year: 2020<br />state: Kerala<br />completeness:  82.1","year: 2021<br />state: Kerala<br />completeness:  95.0"],["year: 2014<br />state: Gujarat<br />completeness:  86.1","year: 2015<br />state: Gujarat<br />completeness:  99.3","year: 2016<br />state: Gujarat<br />completeness:  97.7","year: 2017<br />state: Gujarat<br />completeness:  83.9","year: 2018<br />state: Gujarat<br />completeness:  96.1","year: 2019<br />state: Gujarat<br />completeness: 101.4","year: 2020<br />state: Gujarat<br />completeness: 112.3","year: 2021<br />state: Gujarat<br />completeness: 107.6"],["year: 2014<br />state: Andhra Pradesh<br />completeness:  78.0","year: 2015<br />state: Andhra Pradesh<br />completeness:  78.5","year: 2016<br />state: Andhra Pradesh<br />completeness:  78.7","year: 2017<br />state: Andhra Pradesh<br />completeness:  81.1","year: 2018<br />state: Andhra Pradesh<br />completeness:  90.6","year: 2019<br />state: Andhra Pradesh<br />completeness:  96.3","year: 2020<br />state: Andhra Pradesh<br />completeness: 106.3","year: 2021<br />state: Andhra Pradesh<br />completeness: 107.9"],["year: 2014<br />state: Odisha<br />completeness:  92.5","year: 2015<br />state: Odisha<br />completeness:  94.3","year: 2016<br />state: Odisha<br />completeness: 100.5","year: 2017<br />state: Odisha<br />completeness:  94.1","year: 2018<br />state: Odisha<br />completeness:  96.1","year: 2019<br />state: Odisha<br />completeness: 101.3","year: 2020<br />state: Odisha<br />completeness: 103.5","year: 2021<br />state: Odisha<br />completeness: 108.3"],["year: 2014<br />state: Tamil Nadu<br />completeness:  96.4","year: 2015<br />state: Tamil Nadu<br />completeness: 100.8","year: 2016<br />state: Tamil Nadu<br />completeness: 102.5","year: 2017<br />state: Tamil Nadu<br />completeness: 101.1","year: 2018<br />state: Tamil Nadu<br />completeness: 102.9","year: 2019<br />state: Tamil Nadu<br />completeness: 119.6","year: 2020<br />state: Tamil Nadu<br />completeness: 128.0","year: 2021<br />state: Tamil Nadu<br />completeness: 129.2"]],"colorscale":[[0,"#FAE0CD"],[0.021946564885496192,"#FADCC7"],[0.035305343511450413,"#FAD9C3"],[0.059160305343511486,"#F9D4BC"],[0.087786259541984768,"#F9CEB3"],[0.11259541984732831,"#F8C9AC"],[0.12022900763358782,"#F8C8A9"],[0.14408396946564889,"#F7C3A2"],[0.15171755725190841,"#F7C1A0"],[0.17461832061068711,"#F6BD99"],[0.18129770992366415,"#F6BB98"],[0.20706106870229013,"#F6B591"],[0.21660305343511457,"#F7B38F"],[0.21851145038167941,"#F7B38E"],[0.22519083969465653,"#F7B18D"],[0.22805343511450385,"#F7B18C"],[0.22996183206106877,"#F7B08C"],[0.24045801526717564,"#F7AE89"],[0.25572519083969475,"#F7AB85"],[0.26335877862595425,"#F7A983"],[0.26622137404580154,"#F7A883"],[0.26908396946564894,"#F7A882"],[0.27480916030534358,"#F7A681"],[0.28625954198473286,"#F7A47E"],[0.28721374045801534,"#F7A47E"],[0.30057251908396954,"#F7A17A"],[0.31393129770992373,"#F69E77"],[0.31583969465648859,"#F69D77"],[0.31774809160305351,"#F69D76"],[0.32538167938931306,"#F69B74"],[0.33015267175572527,"#F69A73"],[0.33587786259541991,"#F69972"],[0.34255725190839698,"#F69770"],[0.34446564885496189,"#F69770"],[0.34732824427480918,"#F6966F"],[0.35209923664122139,"#F6956E"],[0.36068702290076343,"#F6936C"],[0.36164122137404586,"#F6936B"],[0.36450381679389321,"#F6926B"],[0.37213740458015271,"#F69169"],[0.37309160305343519,"#F69069"],[0.38358778625954199,"#F58E66"],[0.3854961832061069,"#F58E66"],[0.38740458015267182,"#F58D65"],[0.39980916030534358,"#F58A62"],[0.40076335877862607,"#F58A62"],[0.4017175572519085,"#F58A62"],[0.40267175572519087,"#F58A62"],[0.40744274809160308,"#F58861"],[0.41793893129771004,"#F5865F"],[0.41889312977099241,"#F5865F"],[0.43225190839694666,"#F4835D"],[0.43416030534351158,"#F4825D"],[0.45229007633587792,"#F47E5A"],[0.45419847328244284,"#F47E59"],[0.45610687022900775,"#F47D59"],[0.45801526717557267,"#F47D59"],[0.46564885496183217,"#F37B58"],[0.47328244274809167,"#F37956"],[0.47805343511450393,"#F37856"],[0.47996183206106879,"#F37755"],[0.48187022900763371,"#F37755"],[0.49236641221374056,"#F37453"],[0.49332061068702293,"#F37453"],[0.49522900763358785,"#F37453"],[0.49904580152671768,"#F27352"],[0.5009541984732826,"#F27252"],[0.50190839694656497,"#F27252"],[0.50286259541984735,"#F27252"],[0.50381679389312994,"#F27151"],[0.50477099236641232,"#F27151"],[0.50667938931297718,"#F27151"],[0.50763358778625955,"#F27051"],[0.51145038167938939,"#F27050"],[0.51431297709923673,"#F26F50"],[0.5162213740458016,"#F26E4F"],[0.51812977099236657,"#F26E4F"],[0.52385496183206115,"#F26C4E"],[0.52862595419847336,"#F26B4D"],[0.53244274809160319,"#F16A4D"],[0.53816793893129777,"#F1694C"],[0.54103053435114512,"#F1684B"],[0.54198473282442761,"#F1684B"],[0.54389312977099247,"#F1674B"],[0.54770992366412219,"#F1664A"],[0.55057251908396954,"#F1654A"],[0.55343511450381699,"#F1654A"],[0.56011450381679395,"#F06348"],[0.56297709923664141,"#F06248"],[0.56774809160305362,"#F06147"],[0.57156488549618334,"#F06047"],[0.58301526717557262,"#F05D45"],[0.58683206106870245,"#EF5C44"],[0.5887404580152672,"#EF5B44"],[0.5896946564885498,"#EF5B44"],[0.59064885496183217,"#EF5B44"],[0.59255725190839703,"#EF5A43"],[0.594465648854962,"#EF5A43"],[0.59637404580152686,"#EF5943"],[0.60400763358778642,"#EF5742"],[0.60496183206106879,"#EF5741"],[0.60591603053435128,"#EF5641"],[0.60782442748091614,"#EF5641"],[0.609732824427481,"#EE5541"],[0.61259541984732824,"#EE5440"],[0.61450381679389332,"#EE5440"],[0.61641221374045807,"#EE5340"],[0.61736641221374045,"#EE5340"],[0.61927480916030553,"#EE523F"],[0.63167938931297707,"#ED5040"],[0.63358778625954215,"#EC5040"],[0.63645038167938928,"#EC4F40"],[0.63931297709923673,"#EC4F40"],[0.64122137404580148,"#EB4E40"],[0.64312977099236657,"#EB4E41"],[0.6469465648854964,"#EB4D41"],[0.64885496183206115,"#EB4D41"],[0.64980916030534353,"#EA4D41"],[0.6507633587786259,"#EA4C41"],[0.66507633587786263,"#E84A42"],[0.66698473282442761,"#E84942"],[0.66984732824427484,"#E84942"],[0.67175572519083981,"#E84842"],[0.67366412213740468,"#E74843"],[0.67748091603053451,"#E74743"],[0.68416030534351147,"#E64643"],[0.68606870229007655,"#E64643"],[0.68702290076335892,"#E64543"],[0.6994274809160308,"#E44344"],[0.7146946564885498,"#E24045"],[0.71564885496183217,"#E24045"],[0.72614503816793896,"#E13D46"],[0.72900763358778642,"#E13D46"],[0.73187022900763354,"#E03C46"],[0.73377862595419863,"#E03C46"],[0.734732824427481,"#E03C46"],[0.7452290076335879,"#DF3947"],[0.74904580152671763,"#DE3947"],[0.75477099236641232,"#DD3747"],[0.77099236641221403,"#DB3448"],[0.78148854961832082,"#DA3149"],[0.7872137404580154,"#D93049"],[0.79293893129770998,"#D92E49"],[0.79389312977099236,"#D82E49"],[0.79675572519083981,"#D82D4A"],[0.80057251908396965,"#D82C4A"],[0.83874045801526742,"#D3224C"],[0.86450381679389321,"#CE1F4D"],[0.90839694656488557,"#C41E50"],[0.98854961832061083,"#B31C56"],[1,"#B01C57"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2014],"y":[1],"name":"0f8fe6d2dc6390674c2cfadbf10a2737","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#FAEBDD"],[0.0033444816053511571,"#FAEADC"],[0.0066889632107023445,"#FAE9DB"],[0.010033444816053502,"#FAE9DA"],[0.013377926421404689,"#FAE8D8"],[0.016722408026755845,"#FAE7D7"],[0.020066889632107034,"#FAE6D6"],[0.023411371237458192,"#FAE6D5"],[0.026755852842809378,"#FAE5D4"],[0.030100334448160536,"#FAE4D3"],[0.03344481605351169,"#FAE3D2"],[0.03678929765886288,"#FAE2D0"],[0.040133779264214041,"#FAE2CF"],[0.043478260869565223,"#FAE1CE"],[0.046822742474916385,"#FAE0CD"],[0.050167224080267539,"#FADFCC"],[0.053511705685618728,"#FADFCB"],[0.056856187290969917,"#FADECA"],[0.060200668896321072,"#FADDC9"],[0.063545150501672226,"#FADCC7"],[0.066889632107023422,"#FADCC6"],[0.070234113712374577,"#FADBC5"],[0.073578595317725759,"#FADAC4"],[0.076923076923076913,"#FAD9C3"],[0.080267558528428082,"#FAD8C2"],[0.083612040133779264,"#F9D8C1"],[0.086956521739130446,"#F9D7BF"],[0.090301003344481615,"#F9D6BE"],[0.093645484949832769,"#F9D5BD"],[0.096989966555183924,"#F9D5BC"],[0.10033444816053511,"#F9D4BB"],[0.1036789297658863,"#F9D3BA"],[0.10702341137123746,"#F9D2B9"],[0.11036789297658861,"#F9D2B8"],[0.11371237458193983,"#F9D1B7"],[0.11705685618729099,"#F9D0B5"],[0.12040133779264214,"#F9CFB4"],[0.1237458193979933,"#F9CEB3"],[0.12709030100334445,"#F9CEB2"],[0.13043478260869562,"#F8CDB1"],[0.13377926421404684,"#F8CCB0"],[0.13712374581939799,"#F8CBAF"],[0.14046822742474915,"#F8CBAE"],[0.14381270903010038,"#F8CAAD"],[0.14715719063545152,"#F8C9AB"],[0.15050167224080269,"#F8C8AA"],[0.15384615384615383,"#F8C8A9"],[0.157190635451505,"#F8C7A8"],[0.16053511705685616,"#F8C6A7"],[0.1638795986622073,"#F7C5A6"],[0.16722408026755853,"#F7C4A5"],[0.1705685618729097,"#F7C4A4"],[0.17391304347826089,"#F7C3A3"],[0.17725752508361206,"#F7C2A1"],[0.18060200668896323,"#F7C1A0"],[0.18394648829431437,"#F7C19F"],[0.18729096989966554,"#F7C09E"],[0.19063545150501668,"#F6BF9D"],[0.19397993311036785,"#F6BE9C"],[0.19732441471571907,"#F6BE9B"],[0.20066889632107021,"#F6BD9A"],[0.20401337792642144,"#F6BC99"],[0.2073578595317726,"#F6BB98"],[0.21070234113712374,"#F6BA97"],[0.21404682274247491,"#F6BA96"],[0.21739130434782605,"#F6B995"],[0.22073578595317722,"#F6B894"],[0.22408026755852839,"#F6B793"],[0.22742474916387959,"#F6B692"],[0.23076923076923075,"#F6B591"],[0.23411371237458198,"#F6B590"],[0.23745819397993312,"#F7B48F"],[0.24080267558528429,"#F7B38F"],[0.24414715719063546,"#F7B28E"],[0.2474916387959866,"#F7B18D"],[0.25083612040133774,"#F7B18C"],[0.2541806020066889,"#F7B08B"],[0.25752508361204013,"#F7AF8A"],[0.2608695652173913,"#F7AE89"],[0.26421404682274252,"#F7AD88"],[0.26755852842809369,"#F7AC87"],[0.2709030100334448,"#F7AC86"],[0.27424749163879597,"#F7AB85"],[0.27759197324414714,"#F7AA84"],[0.28093645484949831,"#F7A983"],[0.28428093645484953,"#F7A883"],[0.28762541806020064,"#F7A782"],[0.29096989966555181,"#F7A781"],[0.29431438127090298,"#F7A680"],[0.29765886287625415,"#F7A57F"],[0.30100334448160537,"#F7A47E"],[0.30434782608695654,"#F7A37D"],[0.30769230769230765,"#F7A27C"],[0.31103678929765882,"#F7A27B"],[0.31438127090301005,"#F7A17A"],[0.31772575250836121,"#F6A079"],[0.32107023411371238,"#F69F78"],[0.3244147157190635,"#F69E77"],[0.32775919732441466,"#F69D77"],[0.33110367892976589,"#F69D76"],[0.33444816053511706,"#F69C75"],[0.33779264214046822,"#F69B74"],[0.34113712374581939,"#F69A73"],[0.34448160535117056,"#F69972"],[0.34782608695652173,"#F69871"],[0.3511705685618729,"#F69770"],[0.35451505016722407,"#F6976F"],[0.35785953177257523,"#F6966E"],[0.36120401337792646,"#F6956D"],[0.36454849498327757,"#F6946D"],[0.36789297658862874,"#F6936C"],[0.37123745819397991,"#F6926B"],[0.37458193979933108,"#F6926A"],[0.3779264214046823,"#F69169"],[0.38127090301003341,"#F59068"],[0.38461538461538464,"#F58F67"],[0.38795986622073569,"#F58E66"],[0.39130434782608697,"#F58D65"],[0.39464882943143814,"#F58C64"],[0.39799331103678925,"#F58C64"],[0.40133779264214042,"#F58B63"],[0.40468227424749159,"#F58A62"],[0.40802675585284287,"#F58962"],[0.41137123745819393,"#F58861"],[0.41471571906354521,"#F58760"],[0.41806020066889621,"#F58660"],[0.42140468227424749,"#F5855F"],[0.42474916387959866,"#F4855E"],[0.42809364548494983,"#F4845E"],[0.43143812709030099,"#F4835D"],[0.43478260869565211,"#F4825D"],[0.43812709030100339,"#F4815C"],[0.44147157190635444,"#F4805B"],[0.44481605351170572,"#F47F5B"],[0.44816053511705678,"#F47E5A"],[0.45150501672240806,"#F47D59"],[0.45484949832775917,"#F47D59"],[0.45819397993311034,"#F47C58"],[0.46153846153846151,"#F37B58"],[0.46488294314381268,"#F37A57"],[0.46822742474916396,"#F37956"],[0.47157190635451496,"#F37856"],[0.47491638795986624,"#F37755"],[0.47826086956521729,"#F37655"],[0.48160535117056857,"#F37554"],[0.48494983277591974,"#F37453"],[0.48829431438127091,"#F37353"],[0.49163879598662202,"#F27352"],[0.49498327759197319,"#F27252"],[0.49832775919732447,"#F27151"],[0.50167224080267547,"#F27050"],[0.50501672240802675,"#F26F50"],[0.50836120401337781,"#F26E4F"],[0.51170568561872909,"#F26D4F"],[0.51505016722408026,"#F26C4E"],[0.51839464882943143,"#F26B4D"],[0.52173913043478259,"#F16A4D"],[0.52508361204013376,"#F1694C"],[0.52842809364548504,"#F1684C"],[0.5317725752508361,"#F1674B"],[0.53511705685618738,"#F1664A"],[0.53846153846153832,"#F1654A"],[0.5418060200668896,"#F16449"],[0.54515050167224077,"#F06349"],[0.54849498327759194,"#F06248"],[0.55183946488294311,"#F06147"],[0.55518394648829428,"#F06047"],[0.55852842809364545,"#F05F46"],[0.56187290969899661,"#F05E46"],[0.56521739130434778,"#F05D45"],[0.56856187290969906,"#EF5C44"],[0.57190635451505023,"#EF5B44"],[0.57525083612040129,"#EF5A43"],[0.57859531772575246,"#EF5943"],[0.58193979933110362,"#EF5842"],[0.58528428093645479,"#EF5742"],[0.58862876254180596,"#EF5641"],[0.59197324414715713,"#EE5540"],[0.5953177257525083,"#EE5440"],[0.59866220735785958,"#EE523F"],[0.60200668896321075,"#EE523F"],[0.60535117056856191,"#ED513F"],[0.60869565217391308,"#ED5040"],[0.61204013377926414,"#EC5040"],[0.61538461538461531,"#EC4F40"],[0.61872909698996648,"#EB4E40"],[0.62207357859531764,"#EB4D41"],[0.62541806020066881,"#EA4D41"],[0.62876254180602009,"#EA4C41"],[0.63210702341137126,"#EA4B41"],[0.63545150501672243,"#E94B42"],[0.6387959866220736,"#E94A42"],[0.64214046822742477,"#E84942"],[0.64548494983277593,"#E84842"],[0.64882943143812699,"#E74843"],[0.65217391304347816,"#E74743"],[0.65551839464882933,"#E64643"],[0.65886287625418061,"#E64543"],[0.66220735785953178,"#E54544"],[0.66555183946488294,"#E54444"],[0.66889632107023411,"#E44344"],[0.67224080267558528,"#E44244"],[0.67558528428093645,"#E44245"],[0.67892976588628762,"#E34145"],[0.68227424749163879,"#E34045"],[0.68561872909698984,"#E23F45"],[0.68896321070234112,"#E23F45"],[0.69230769230769229,"#E13E46"],[0.69565217391304346,"#E13D46"],[0.69899665551839463,"#E03C46"],[0.7023411371237458,"#E03C46"],[0.70568561872909696,"#DF3B47"],[0.70903010033444813,"#DF3A47"],[0.7123745819397993,"#DE3947"],[0.71571906354515047,"#DE3847"],[0.71906354515050175,"#DD3747"],[0.72240802675585292,"#DD3748"],[0.72575250836120397,"#DC3648"],[0.72909698996655514,"#DC3548"],[0.73244147157190631,"#DC3448"],[0.73578595317725748,"#DB3348"],[0.73913043478260865,"#DB3249"],[0.74247491638795982,"#DA3149"],[0.74581939799331098,"#DA3149"],[0.74916387959866215,"#D93049"],[0.75250836120401343,"#D92F49"],[0.7558528428093646,"#D82E4A"],[0.75919732441471566,"#D82D4A"],[0.76254180602006683,"#D72C4A"],[0.76588628762541799,"#D72B4A"],[0.76923076923076916,"#D62A4A"],[0.77257525083612033,"#D6294A"],[0.7759197324414715,"#D5284B"],[0.77926421404682267,"#D5274B"],[0.78260869565217395,"#D4264B"],[0.78595317725752512,"#D4254B"],[0.78929765886287628,"#D4244B"],[0.79264214046822745,"#D3234C"],[0.79598662207357851,"#D3214C"],[0.79933110367892968,"#D2204C"],[0.80267558528428085,"#D1204C"],[0.80602006688963201,"#D1204C"],[0.80936454849498318,"#D0204D"],[0.81270903010033446,"#CF204D"],[0.81605351170568563,"#CE1F4D"],[0.8193979933110368,"#CD1F4E"],[0.82274247491638797,"#CC1F4E"],[0.82608695652173914,"#CC1F4E"],[0.8294314381270903,"#CB1F4E"],[0.83277591973244136,"#CA1F4F"],[0.83612040133779253,"#C91F4F"],[0.8394648829431437,"#C81F4F"],[0.84280936454849498,"#C81F4F"],[0.84615384615384615,"#C71E50"],[0.84949832775919731,"#C61E50"],[0.85284280936454848,"#C51E50"],[0.85618729096989965,"#C41E50"],[0.85953177257525082,"#C41E51"],[0.86287625418060199,"#C31E51"],[0.86622073578595316,"#C21E51"],[0.86956521739130421,"#C11E51"],[0.87290969899665549,"#C01E52"],[0.87625418060200666,"#BF1D52"],[0.87959866220735783,"#BF1D52"],[0.882943143812709,"#BE1D52"],[0.88628762541806017,"#BD1D53"],[0.88963210702341133,"#BC1D53"],[0.8929765886287625,"#BB1D53"],[0.89632107023411367,"#BB1D53"],[0.89966555183946484,"#BA1D54"],[0.90301003344481612,"#B91D54"],[0.90635451505016729,"#B81D54"],[0.90969899665551834,"#B71C54"],[0.91304347826086951,"#B61C55"],[0.91638795986622068,"#B61C55"],[0.91973244147157185,"#B51C55"],[0.92307692307692302,"#B41C55"],[0.92642140468227419,"#B31C56"],[0.92976588628762535,"#B21C56"],[0.93311036789297663,"#B21C56"],[0.93645484949832791,"#B11C56"],[0.93979933110367897,"#B01C57"],[0.94314381270902992,"#AF1B57"],[0.9464882943143812,"#AE1B57"],[0.94983277591973247,"#AD1B57"],[0.95317725752508353,"#AD1B58"],[0.95652173913043459,"#AC1B58"],[0.95986622073578587,"#AB1B58"],[0.96321070234113715,"#AA1B58"],[0.96655518394648843,"#A91B59"],[0.96989966555183948,"#A81B59"],[0.97324414715719054,"#A81B59"],[0.97658862876254182,"#A71B59"],[0.9799331103678931,"#A61B5A"],[0.98327759197324405,"#A51A5A"],[0.9866220735785951,"#A41A5A"],[0.98996655518394638,"#A31A5A"],[0.99331103678929766,"#A31A5B"],[0.99665551839464894,"#A21A5B"],[1,"#A11A5B"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.039999999999996,"title":"Completeness (%)","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198},"tickmode":"array","ticktext":["25","50","75","100","125"],"tickvals":[0.052603634298693913,0.26484099943214079,0.47707836456558766,0.68931572969903465,0.90155309483248147],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":60.765462847654625,"r":7.3059360730593621,"b":45.425065033747813,"l":139.80904939809054},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b> Figure 2: Completeness of Death Registration by State and Sex (2014–2021) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,0.32925636007827785],"automargin":true,"type":"linear","autorange":false,"range":[2013.0999999999999,2021.9000000000001],"tickmode":"array","ticktext":["2014","2015","2016","2017","2018","2019","2020","2021"],"tickvals":[2014,2015,2016,2017,2018,2019,2020,2021],"categoryorder":"array","categoryarray":["2014","2015","2016","2017","2018","2019","2020","2021"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835198},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"<b> Year <\/b>","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-25.831872837815908},{"text":"<b> State <\/b>","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-123.1382316313823},{"text":"Female","x":0.16462818003913893,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402243},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Male","x":0.5,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402243},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Persons","x":0.83537181996086107,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402243},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,21.600000000000001],"tickmode":"array","ticktext":["Jharkhand","Bihar","Assam","Uttar Pradesh","Telangana","Jammu And Kashmir","Himachal Pradesh","Uttarakhand","Rajasthan","West Bengal","Haryana","Punjab","Maharashtra","Chhattisgarh","Karnataka","Madhya Pradesh","Kerala","Gujarat","Andhra Pradesh","Odisha","Tamil Nadu"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,14.999999999999998,15.999999999999998,17,18,19,20,21],"categoryorder":"array","categoryarray":["Jharkhand","Bihar","Assam","Uttar Pradesh","Telangana","Jammu And Kashmir","Himachal Pradesh","Uttarakhand","Rajasthan","West Bengal","Haryana","Punjab","Maharashtra","Chhattisgarh","Karnataka","Madhya Pradesh","Kerala","Gujarat","Andhra Pradesh","Odisha","Tamil Nadu"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835205},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32925636007827785,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32925636007827785,"y0":0,"y1":27.629721876297225,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.33741030658838878,"x1":0.66258969341161122,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.33741030658838878,"x1":0.66258969341161122,"y0":0,"y1":27.629721876297225,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67074363992172203,"x1":1,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67074363992172203,"x1":1,"y0":0,"y1":27.629721876297225,"yanchor":1,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[2013.0999999999999,2021.9000000000001],"tickmode":"array","ticktext":["2014","2015","2016","2017","2018","2019","2020","2021"],"tickvals":[2014,2015,2016,2017,2018,2019,2020,2021],"categoryorder":"array","categoryarray":["2014","2015","2016","2017","2018","2019","2020","2021"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835198},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.33741030658838878,0.66258969341161122],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[2013.0999999999999,2021.9000000000001],"tickmode":"array","ticktext":["2014","2015","2016","2017","2018","2019","2020","2021"],"tickvals":[2014,2015,2016,2017,2018,2019,2020,2021],"categoryorder":"array","categoryarray":["2014","2015","2016","2017","2018","2019","2020","2021"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.283520132835198},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.67074363992172203,1],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198},"title":{"text":"Completeness (%)","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835198}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"477c61714f04":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"477c61714f04","visdat":{"477c61714f04":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="gender-gaps-in-death-registration-at-the-district-level-2021" class="level2">
+<h2 class="anchored" data-anchor-id="gender-gaps-in-death-registration-at-the-district-level-2021">🧭 Gender Gaps in Death Registration at the District Level (2021)</h2>
+<p>How wide is the gap in registering male and female deaths across India? NFHS-5 data show a consistent disadvantage for women, even after adjusting for household and socioeconomic characteristics.</p>
+<section id="national-gender-gap" class="level3">
+<h3 class="anchored" data-anchor-id="national-gender-gap">📊 National Gender Gap</h3>
+<ul>
+<li>In 2021, <strong>India recorded a gender gap of 7.9 percentage points</strong><br>
+<em>(95% Credible Interval: 7.4 – 8.3)</em><br>
+</li>
+<li><strong>Female deaths</strong> were significantly less likely to be registered than male deaths.</li>
+<li>The model adjusted for:
+<ul>
+<li>Education</li>
+<li>Religion</li>
+<li>Wealth</li>
+<li>Caste</li>
+<li>Household and asset ownership</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="state-level-highlights" class="level3">
+<h3 class="anchored" data-anchor-id="state-level-highlights">📍 State-Level Highlights</h3>
+<p>Large gender gaps (&gt;10 percentage points) were observed in:</p>
+<ul>
+<li><strong>Uttar Pradesh</strong>: 11.6 (CI: 10.9–12.2)</li>
+<li><strong>Bihar</strong>: 11.1 (CI: 10.4–11.8)</li>
+<li><strong>Jharkhand</strong>: 11.3 (CI: 10.6–12.0)</li>
+<li><strong>Telangana</strong>: 10.5 (CI: 9.3–11.7)</li>
+</ul>
+<p>States with <strong>near gender parity</strong>:</p>
+<ul>
+<li><strong>Kerala</strong>: 1.0 (CI: 0.7–1.4)</li>
+<li><strong>Goa</strong>: 0.7 (CI: 0.2–1.5)</li>
+</ul>
+<hr>
+</section>
+<section id="regional-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="regional-patterns">🗺️ Regional Patterns</h3>
+<section id="western-india" class="level4">
+<h4 class="anchored" data-anchor-id="western-india">🟩 Western India</h4>
+<ul>
+<li><strong>96%</strong> of districts: Male completeness &gt;80%</li>
+<li><strong>86.5%</strong>: Female completeness &gt;80%</li>
+<li><strong>71.6%</strong>: Gender gap ≤5%</li>
+</ul>
+</section>
+<section id="southern-india" class="level4">
+<h4 class="anchored" data-anchor-id="southern-india">🟦 Southern India</h4>
+<ul>
+<li><strong>78.1%</strong>: Males &gt;80%</li>
+<li><strong>65.6%</strong>: Females &gt;80%</li>
+<li><strong>17.2%</strong>: Gender gap between 10–15%</li>
+</ul>
+</section>
+<section id="northern-india" class="level4">
+<h4 class="anchored" data-anchor-id="northern-india">🟨 Northern India</h4>
+<ul>
+<li><strong>73.5%</strong>: Males &gt;80%</li>
+<li><strong>49.3%</strong>: Females &gt;80%</li>
+<li><strong>22.8%</strong>: Gender gap &gt;10–15%</li>
+</ul>
+</section>
+<section id="central-eastern-northeast" class="level4">
+<h4 class="anchored" data-anchor-id="central-eastern-northeast">🟥 Central, Eastern &amp; Northeast</h4>
+<ul>
+<li>Central: 23.6% males vs.&nbsp;6.8% females &gt;80%</li>
+<li>Northeast: 17.3% males vs.&nbsp;8.7% females &gt;80%</li>
+<li>Eastern: 21.7% males vs.&nbsp;9.5% females &gt;80%</li>
+<li>Many districts show gaps between 10–15 percentage points</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="district-level-inequalities" class="level3">
+<h3 class="anchored" data-anchor-id="district-level-inequalities">🧩 District-Level Inequalities</h3>
+<ul>
+<li><strong>241 districts</strong> had gender gaps of <strong>10–15 percentage points</strong></li>
+<li><strong>Northern states</strong> dominate this list</li>
+</ul>
+<section id="examples" class="level4">
+<h4 class="anchored" data-anchor-id="examples">🔸 Examples</h4>
+<ul>
+<li><strong>Rajasthan</strong>: Alwar (14.1), Dausa (13.8), Karauli (13.5)</li>
+<li><strong>Uttarakhand</strong>: Tehri Garhwal (13.1)</li>
+<li><strong>Haryana</strong>: Mewat (12.1)</li>
+<li><strong>Uttar Pradesh</strong>: Ballia (13.3), Aligarh (13.2), Bareilly (13.1) — total 69 high-gap districts</li>
+<li><strong>Bihar</strong>: Munger (13.0), Bhojpur (12.8)</li>
+<li><strong>Madhya Pradesh</strong>: Chhatarpur (12.7)</li>
+<li><strong>Chhattisgarh</strong>: Bilaspur (12.5)</li>
+<li><strong>Jharkhand</strong>: Purbi Singhbhum (12.9), Dhanbad (12.7)</li>
+<li><strong>West Bengal</strong>: Puruliya (12.9)</li>
+<li><strong>Odisha</strong>: Mayurbhanj (12.3)</li>
+<li><strong>Telangana</strong>: Jayashankar (13.6), Karimnagar (12.7), Medak (12.6)</li>
+</ul>
+<p>Other notable districts include Srikakulam and Visakhapatnam (Andhra Pradesh) and Raichur (Karnataka).</p>
+</section>
+</section>
+<section id="figure-3.-completeness-of-death-registration-in-india-by-gender-at-the-district-level-nfhs-5" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3.-completeness-of-death-registration-in-india-by-gender-at-the-district-level-nfhs-5">Figure 3. Completeness of Death Registration in India by Gender at the District Level (NFHS-5)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-4.-gender-gap-in-completeness-of-death-registration-in-india-at-the-district-level-nfhs-5" class="level3">
+<h3 class="anchored" data-anchor-id="figure-4.-gender-gap-in-completeness-of-death-registration-in-india-at-the-district-level-nfhs-5">Figure 4. Gender Gap in Completeness of Death Registration in India at the District Level (NFHS-5)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="total-and-direct-effects-of-gender-on-death-registration-2015-2020" class="level2">
+<h2 class="anchored" data-anchor-id="total-and-direct-effects-of-gender-on-death-registration-2015-2020">🧮 Total and Direct Effects of Gender on Death Registration (2015 &amp; 2020)</h2>
+<p>This analysis uses <strong>state-level data</strong> from <a href="https://rchiips.org/NFHS/nfhs-4Reports/India.pdf">NFHS-4 (2015–16)</a> and <a href="https://rchiips.org/nfhs/factsheet_NFHS-5.shtml">NFHS-5 (2019–21)</a> to estimate the <strong>total and direct effects of gender</strong> on the completeness of death registration in <strong>2015</strong> and <strong>2020</strong>.<br>
+Since <strong>NFHS-4 did not include data on death registration</strong>, we used <strong>completeness estimates at the level of larger states</strong>, derived from Civil Registration and SRS data (see <a href="data_methods.html#how-we-estimated-completeness-of-death-registration-2014-2021-for-bigger-states">Objective 1</a>).</p>
+<hr>
+<section id="key-findings" class="level3">
+<h3 class="anchored" data-anchor-id="key-findings">📊 Key Findings</h3>
+<ul>
+<li>In <strong>2015</strong>, men were <strong>8.62 percentage points</strong> more likely to have their deaths registered than women<br>
+<em>(95% Credible Interval: 8.37 – 8.91)</em><br>
+</li>
+<li>In <strong>2020</strong>, the gap narrowed slightly to <strong>8.34 percentage points</strong><br>
+<em>(95% CI: 8.05 – 8.61)</em></li>
+</ul>
+<hr>
+</section>
+<section id="mediation-by-household-asset-ownership" class="level3">
+<h3 class="anchored" data-anchor-id="mediation-by-household-asset-ownership">🔄 Mediation by Household Asset Ownership</h3>
+<p>We examined how much of the gender gap could be explained by <strong>household ownership of land or housing</strong> (a proxy for female material empowerment).</p>
+<section id="in-2015" class="level4">
+<h4 class="anchored" data-anchor-id="in-2015">In 2015:</h4>
+<ul>
+<li><strong>15.0%</strong> of the gender gap was mediated through asset ownership<br>
+</li>
+<li><strong>Direct effect</strong> of gender: <strong>7.33 percentage points</strong><br>
+<em>(CI: 7.07 – 7.60)</em></li>
+</ul>
+</section>
+<section id="in-2020" class="level4">
+<h4 class="anchored" data-anchor-id="in-2020">In 2020:</h4>
+<ul>
+<li><strong>Only 3.12%</strong> of the gap was mediated through ownership<br>
+</li>
+<li><strong>Direct effect</strong> of gender: <strong>8.08 percentage points</strong><br>
+<em>(CI: 7.79 – 8.36)</em></li>
+</ul>
+</section>
+</section>
+<section id="figure-5.-total-and-direct-effects-of-gender-on-death-registration-completeness-2015-2020" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5.-total-and-direct-effects-of-gender-on-death-registration-completeness-2015-2020">Figure 5. Total and Direct Effects of Gender on Death Registration Completeness (2015 &amp; 2020)</h3>
+<p><img src="images/tot_dir_gender_effect.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/yourusername\.github\.io\/invisible-deaths\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

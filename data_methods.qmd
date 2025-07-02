@@ -1,0 +1,576 @@
+# 📊 Data Sources
+
+This study draws on multiple national datasets to estimate and explore gender disparities in death registration in India. Below are the key data sources used.
+
+------------------------------------------------------------------------
+
+## 📁 Civil Registration System (CRS)
+
+-   Provides annual data on **registered deaths by sex and state**.
+-   Data span from **2014 to 2021**.
+-   Used to assess official registration coverage.
+
+🔗 [Access CRS Reports (2014–2021)](https://censusindia.gov.in/census.website/data/VSREPORT)
+
+------------------------------------------------------------------------
+
+## 📈 Sample Registration System (SRS)
+
+-   Supplies **age- and sex-specific death rates** for major Indian states.
+-   Used to estimate **expected number of deaths**.
+
+🔗 [Access SRS Statistical Reports](https://censusindia.gov.in/census.website/data/SRSSTAT)
+
+------------------------------------------------------------------------
+
+## 🧮 Population Projections
+
+-   Provides **projected population** by age and sex at the state level.
+-   Based on **Census 2011** and used to scale mortality estimates.
+
+🔗 [National Population Projections Report (2011–2036)](https://nhm.gov.in/New_Updates_2018/Report_Population_Projection_2019.pdf)
+
+------------------------------------------------------------------------
+
+## 📚 National Family Health Survey (NFHS)
+
+### 🏢 State-Level Data
+
+-   Data on **female ownership of assets (land/house)** and **education**.
+-   From:
+    -   [NFHS-4 Report (2015–16)](https://rchiips.org/NFHS/nfhs-4Reports/India.pdf)
+    -   [NFHS-5 Factsheets (2019–21)](https://rchiips.org/nfhs/factsheet_NFHS-5.shtml)
+
+### 🌍 District-Level Microdata (NFHS-5)
+
+-   Used to estimate **district-level death registration completeness**.
+-   Based on household responses about recent deaths and registration status.
+
+🔗 [NFHS-5 Datasets – DHS Program](https://dhsprogram.com/data/dataset/India_Standard-DHS_2020.cfm)\
+*🛡️ Access requires registration and approval from DHS.*
+
+------------------------------------------------------------------------
+
+# 🧪 Methods
+
+## 🧾 How We Estimated Completeness of Death Registration (2014–2021) for Bigger States
+
+The **completeness of death registration** was defined as:
+
+$$
+\text{Completeness} = \left( \frac{\text{Registered deaths (CRS)}}{\text{Estimated deaths (SRS)}} \right) \times 100
+$$
+
+To calculate the *expected number of deaths* (denominator), we followed these steps:
+
+### 🔢 Step-by-step Estimation of Expected Deaths
+
+1.  **Interpolated Population by Age and Sex**\
+    We used official population projections for **2011, 2016, and 2021**, interpolating values for the intervening years (2014–2021) for each state and age-sex group.
+
+2.  **Applied Age-Specific Death Rates (ASDR)**\
+    We multiplied SRS-reported **ASDRs** with the interpolated populations for each group.
+
+3.  **Summed Across Age Groups**\
+    Expected deaths were calculated as:\
+    ∑ *(Population in age group × ASDR for that group)*
+
+------------------------------------------------------------------------
+
+### ⚠️ Handling Missing Data: Gujarat, 2015–2016
+
+Sex-specific CRS data were unavailable for Gujarat in 2015 and 2016.\
+To address this:
+
+-   We extracted **male–female death proportions** from **2014 and 2017**,\
+-   Then **interpolated** the values for 2015 and 2016,\
+-   And finally **distributed the total deaths** accordingly.
+
+## 🧠 Estimating District-Level Completeness (2021)
+
+We used a **Bayesian hierarchical logistic regression** model to estimate the probability of death registration using `ulam` from the **rethinking** package. The model included varying intercepts by gender, district, and state, and fixed effects for household asset ownership, religion, wealth, caste, and education.
+
+::: panel-tabset
+### 📐 Model Equation
+
+$$
+\begin{aligned}
+\text{reg}_{g,d,s} &\sim \text{Binomial}(\text{death}_{g,d,s},\; p_{g,d,s}) \\[1ex]
+\text{logit}(p_{g,d,s}) &= \alpha_{g} + \beta_{d} + \gamma_{s} \\
+&\quad + b_{\text{own}} \cdot \text{ownership}_{g,d,s} + b_{\text{hindu}} \cdot \text{hindu}_{d,s} + b_{\text{wealth}} \cdot \text{poor}_{d,s} \\
+&\quad + b_{\text{gen}} \cdot \text{gen}_{d,s} + b_{\text{edu}} \cdot \text{edu}_{g,d,s} \\[1.5ex]
+\alpha_{g} &\sim \mathcal{N}(0,\; 1.5), \quad g \in \{1,2\} \\
+\beta_{d} &\sim \mathcal{N}(0,\; 1), \quad d = 1,\dots,707 \\
+\gamma_{s} &\sim \mathcal{N}(0,\; 1), \quad s = 1,\dots,36 \\
+b_* &\sim \mathcal{N}(0,\; 1)
+\end{aligned}
+$$
+
+**Where:**
+
+- $\text{reg}_{g,d,s}$ = Registered deaths for gender $g$, district $d$, state $s$  
+- $\text{death}_{g,d,s}$ = Total deaths (binomial denominator)  
+- $p_{g,d,s}$ = Probability of a death being registered  
+- $\alpha_{g}$ = Varying intercept by gender  
+- $\beta_{d}$ = Varying intercept by district  
+- $\gamma_{s}$ = Varying intercept by state  
+- $b_{\text{own}}$ = Effect of ownership (land/house)  
+- $b_{\text{hindu}}$ = Effect of religion (Percent of Hindu)  
+- $b_{\text{wealth}}$ = Effect of poverty (Percent of Poor)  
+- $b_{\text{gen}}$ = Effect of caste (Percent of General)  
+- $b_{\text{edu}}$ = Effect of education (median years)
+
+
+
+
+### 💻 Model Code
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show R code"
+#| eval: false
+library(tidyverse)
+library(here)
+library(rethinking)
+library(bayesplot)
+
+df <- read_rds(here("data", "death_reg.rds"))
+
+district_id_df <- df |> 
+  ungroup() |> 
+  select(hv024, shdist) |> 
+  distinct() |> 
+  mutate(district_id = row_number())
+
+state_id_df <-  df |> 
+  ungroup() |> 
+  select(hv024) |> 
+  distinct() |> 
+  mutate(state_id = row_number())
+
+df <- df |> 
+  left_join(state_id_df) |> 
+  left_join(district_id_df) 
+
+df <- df |> 
+  mutate(gender_id = case_when(gender == "Male" ~ 1,
+                               gender == "Female" ~ 2,
+                               T ~ NA))
+
+df |> 
+  ungroup() |> 
+  count(gender_id)
+
+dat <- list(
+  state = df$state_id,
+  district = df$district_id,
+  gender = df$gender_id,
+  death = round(df$death, 0),
+  reg = round(df$reg_death, 0),
+  p = df$reg_per / 100,
+  edu = df$edu,
+  hindu = df$Hindu,
+  poor = df$Poor,
+  gen = df$General,
+  ownership = df$ownership
+)
+
+# 1. Fit model (as specified)
+m2020 <- ulam(
+  alist(
+    reg ~ dbinom(death, p),
+    logit(p) <- a[gender] + 
+      b[district] + c[state] +
+      b_own * ownership +
+      b_hindu * hindu + 
+      b_wealth * poor + 
+      b_gen * gen +
+      b_edu * edu,
+    
+    a[gender] ~ dnorm(0, 1.5),
+    b[district] ~ dnorm(0, 1),
+    c[state] ~ dnorm(0, 1),
+    
+    b_hindu ~ dnorm(0, 1),
+    b_wealth ~ dnorm(0, 1),
+    b_gen ~ dnorm(0, 1),
+    b_own ~ dnorm(0, 1),
+    b_edu ~ dnorm(0, 1)
+  ),
+  data = dat, chains = 4, cores = 4, log_lik = TRUE
+)
+
+prec <- precis(m2020, depth = 2)
+
+post <- extract.samples(m2020)
+
+###############################################
+#======= Posterior Predictive Check============
+###############################################
+
+# data
+y <- df$reg_per / 100         # Observed proportions (scaled to [0,1])
+yrep <- post$p                # Posterior predictive samples (matrix: n_samples x 1414)
+
+
+# Set parameters
+chunk_size <- 500  # Number of districts per plot
+n_total <- length(y)  # Total districts (1414)
+n_chunks <- ceiling(n_total / chunk_size)
+
+# Golden ratio dimensions (width = height * φ)
+plot_height <- 10  # inches
+plot_width <- round(plot_height * (1 + sqrt(5))/2, 1)  # ≈16.2 inches
+
+# Create output directory
+output_dir <- here("output", "ppc_gender_plots")
+if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+
+# Custom theme for consistent styling
+ppc_theme <- theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom"
+  )
+
+# Main plotting loop
+for (i in 1:n_chunks) {
+  # Get district indices for current chunk
+  idx <- ((i - 1) * chunk_size + 1):min(i * chunk_size, n_total)
+  
+  # Create gender-labeled factor (1=Male, 2=Female)
+  gender_factor <- factor(dat$gender[idx],
+                          levels = c(1, 2),
+                          labels = c("Male", "Female"))
+  
+  # Create the plot
+  current_plot <- ppc_intervals_grouped(
+    y = y[idx],
+    yrep = yrep[, idx],
+    group = gender_factor,
+    prob = 0.8,        # 80% inner interval
+    prob_outer = 0.95, # 95% outer interval
+    size = 1.2,        # Line thickness
+    fatten = 1.5       # Point size
+  ) +
+    labs(
+      title = sprintf("Death Registration: Districts %d-%d", round(min(idx)/2, 0), round(max(idx)/2, 0)),
+      subtitle = "Posterior Predictive Check by Gender",
+      x = "Gender",
+      y = "Proportion of Deaths Registered"
+    ) +
+    ylim(0, 1) +       # Fixed y-axis range
+    scale_x_discrete(labels = c("Male", "Female")) +
+    ppc_theme
+  
+  
+  # Display plot
+  print(current_plot)
+  
+  # Save plot with golden ratio dimensions
+  ggsave(
+    filename = here(output_dir, sprintf("ppc_gender_%03d_%04d-%04d.png", 
+                                        i, min(idx), max(idx))),
+    plot = current_plot,
+    width = plot_width,
+    height = plot_height,
+    dpi = 300,
+    bg = "white"
+  )
+  
+  # Progress message
+  cat(sprintf("Saved plot %d/%d: Districts %d-%d\n", 
+              i, n_chunks, min(idx), max(idx)))
+}
+
+cat("\nAll plots saved to:", output_dir, "\n")
+
+
+##################################
+#==========Estimates==============
+##################################
+
+
+# Calculate predicted yrep = # Calculate predicted probability from logit components
+calc_prob <- function(a, b, c, d, e, f, g, h) {
+  plogis(a + b + c + d + e + f + g + h)
+}
+
+
+# 1. Prepare data with all IDs and covariates
+analysis_df <- df %>%
+  ungroup() |> 
+  janitor::clean_names() |> 
+  select(state_id, district_id, gender_id, 
+         hindu, poor, general, death, reg_death, ownership, edu) %>%
+  rename(gen = general) |> 
+  drop_na()  # Remove rows with missing values
+
+# Function to get covariates for a given district and gender
+get_covariates <- function(district_id, state_id, gender_id) {
+  analysis_df %>%
+    filter(district_id == !!district_id, state_id == !!state_id, gender_id == !!gender_id) %>%
+    summarise(
+      hindu = mean(hindu, na.rm = TRUE),
+      poor = mean(poor, na.rm = TRUE),
+      gen = mean(gen, na.rm = TRUE),
+      ownership = mean(ownership, na.rm = TRUE),
+      edu = mean(edu, na.rm = TRUE)
+    ) %>%
+    as.list()
+}
+
+# Updated probability function
+calc_prob <- function(a, b, c, d, e, f, g, h) {
+  plogis(a + b + c + d + e + f + g + h)
+}
+
+# District-level estimates
+district_effects <- map_dfr(unique(dat$district), function(d) {
+  s <- unique(dat$state[dat$district == d])
+  
+  covariates_m <- get_covariates(d, s, gender_id = 1)
+  covariates_f <- get_covariates(d, s, gender_id = 2)
+  
+  male_prob <- calc_prob(
+    a = post$a[, 1],
+    b = post$b[, d],
+    c = post$c[, s],
+    d = post$b_own * covariates_m$ownership,
+    e = post$b_hindu * covariates_m$hindu ,
+    f = post$b_wealth * covariates_m$poor,
+    g = post$b_gen * covariates_m$gen ,
+    h = post$b_edu * covariates_m$edu
+  )
+  
+  female_prob <- calc_prob(
+    a = post$a[, 2],
+    b = post$b[, d],
+    c = post$c[, s],
+    d = post$b_own * covariates_f$ownership,
+    e = post$b_hindu * covariates_f$hindu ,
+    f = post$b_wealth * covariates_f$poor,
+    g = post$b_gen * covariates_f$gen ,
+    h = post$b_edu * covariates_f$edu
+  )
+  
+  tibble(
+    district_id = d,
+    male_est = mean(male_prob),
+    male_lower = quantile(male_prob, 0.05),
+    male_upper = quantile(male_prob, 0.95),
+    
+    female_est = mean(female_prob),
+    female_lower = quantile(female_prob, 0.05),
+    female_upper = quantile(female_prob, 0.95),
+    
+    diff_est = mean(male_prob - female_prob),
+    diff_lower = quantile(male_prob - female_prob, 0.05),
+    diff_upper = quantile(male_prob - female_prob, 0.95)
+  )
+})
+
+# State-level estimates
+state_effects <- map_dfr(unique(dat$state), function(s) {
+  districts_in_state <- unique(dat$district[dat$state == s])
+  
+  district_probs <- map_dfr(districts_in_state, function(d) {
+    covariates_m <- get_covariates(d, s, gender_id = 1)
+    covariates_f <- get_covariates(d, s, gender_id = 2)
+    
+    male_prob <- calc_prob(
+      a = post$a[, 1],
+      b = post$b[, d],
+      c = post$c[, s],
+      d = post$b_own * covariates_m$ownership,
+      e = post$b_hindu * covariates_m$hindu ,
+      f = post$b_wealth * covariates_m$poor,
+      g = post$b_gen * covariates_m$gen ,
+      h = post$b_edu * covariates_m$edu
+    )
+    
+    female_prob <- calc_prob(
+      a = post$a[, 2],
+      b = post$b[, d],
+      c = post$c[, s],
+      d = post$b_own * covariates_f$ownership,
+      e = post$b_hindu * covariates_f$hindu ,
+      f = post$b_wealth * covariates_f$poor,
+      g = post$b_gen * covariates_f$gen ,
+      h = post$b_edu * covariates_f$edu
+    )
+    
+    tibble(
+      male = male_prob,
+      female = female_prob
+    )
+  }, .id = "district_id")
+  
+  male_state <- rowMeans(matrix(district_probs$male, nrow = nrow(post$a)))
+  female_state <- rowMeans(matrix(district_probs$female, nrow = nrow(post$a)))
+  
+  tibble(
+    state_id = s,
+    male_est = mean(male_state),
+    male_lower = quantile(male_state, 0.05),
+    male_upper = quantile(male_state, 0.95),
+    
+    female_est = mean(female_state),
+    female_lower = quantile(female_state, 0.05),
+    female_upper = quantile(female_state, 0.95),
+    
+    diff_est = mean(male_state - female_state),
+    diff_lower = quantile(male_state - female_state, 0.05),
+    diff_upper = quantile(male_state - female_state, 0.95)
+  )
+})
+
+# National-level estimate
+national_effects <- {
+  all_districts <- unique(dat$district)
+  
+  national_probs <- map_dfr(all_districts, function(d) {
+    s <- unique(dat$state[dat$district == d])
+    
+    covariates_m <- get_covariates(d, s, gender_id = 1)
+    covariates_f <- get_covariates(d, s, gender_id = 2)
+    
+    male_prob <- calc_prob(
+      a = post$a[, 1],
+      b = post$b[, d],
+      c = post$c[, s],
+      d = post$b_own * covariates_m$ownership,
+      e = post$b_hindu * covariates_m$hindu ,
+      f = post$b_wealth * covariates_m$poor,
+      g = post$b_gen * covariates_m$gen ,
+      h = post$b_edu * covariates_m$edu
+    )
+    
+    female_prob <- calc_prob(
+      a = post$a[, 2],
+      b = post$b[, d],
+      c = post$c[, s],
+      d = post$b_own * covariates_f$ownership,
+      e = post$b_hindu * covariates_f$hindu ,
+      f = post$b_wealth * covariates_f$poor,
+      g = post$b_gen * covariates_f$gen ,
+      h = post$b_edu * covariates_f$edu
+    )
+    
+    tibble(
+      male = male_prob,
+      female = female_prob
+    )
+  }, .id = "district_id")
+  
+  male_nat <- rowMeans(matrix(national_probs$male, nrow = nrow(post$a)))
+  female_nat <- rowMeans(matrix(national_probs$female, nrow = nrow(post$a)))
+  
+  tibble(
+    level = "national",
+    male_est = mean(male_nat),
+    male_lower = quantile(male_nat, 0.05),
+    male_upper = quantile(male_nat, 0.95),
+    
+    female_est = mean(female_nat),
+    female_lower = quantile(female_nat, 0.05),
+    female_upper = quantile(female_nat, 0.95),
+    
+    diff_est = mean(male_nat - female_nat),
+    diff_lower = quantile(male_nat - female_nat, 0.05),
+    diff_upper = quantile(male_nat - female_nat, 0.95)
+  )
+}
+
+writexl::write_xlsx(national_effects, here("output", "national_direct_effect_nfhs5.xlsx"))
+
+writexl::write_xlsx(state_effects, here("output", "state_direct_effect_nfhs5.xlsx"))
+
+writexl::write_xlsx(district_effects, here("output", "district_direct_effect_nfhs5.xlsx"))
+
+
+```
+:::
+
+------------------------------------------------------------------------
+
+## 🔍 Exploring Gender Disparities and Mediation by Ownership
+
+### 🧭 Directed Acyclic Graph (DAG)
+
+We constructed a DAG to represent our hypothesised pathways. Gender (exposure) affects death registration (outcome) both directly and indirectly through ownership of assets (mediator). Education and state were included as confounders.
+
+![Figure 1. Directed Acyclic Graph Describing the Gender Effect on Completeness of Death Registration.](images/dag.png){fig-align="center"}
+
+### 📑 Variable Definitions
+
+-   **Completeness**: % of expected deaths reported (based on SRS and CRS)
+-   **Ownership**: Average of % women owning land and % women owning houses (from NFHS-4 and NFHS-5)
+-   **Education**: Median years of schooling among women (state-level, NFHS)
+
+### 🧮 Statistical Model
+
+We fitted two Bayesian models (for 2015 and 2020) to estimate: - Total effect of gender (adjusted for education, state) - Direct effect of gender (additionally adjusted for ownership)
+
+::: panel-tabset
+#### 🟠 Total Effect
+
+```{=latex}
+\begin{align*}
+O_{i,g} &\sim \text{Binomial}(E_{i,g}, p_{i,g}) \\
+\text{logit}(p_{i,g}) &= a[g] + b[\text{state}] + c \cdot \text{education}_{i}  \\[1.5ex]
+a[g] &\sim \text{Normal}(\bar{a}, \sigma) \\
+\bar{a} &\sim \text{Normal}(0, 1.5) \\
+\sigma &\sim \text{Exponential}(3) \\
+b[\text{state}] &\sim \text{Normal}(0, 0.1) \\
+c &\sim \text{Normal}(0, 0.1) 
+\end{align*}
+```
+
+**Where:**
+
+-  $O_{i,g}$: Number of registered deaths for group $g$ in state  $i$
+- $E_{i,g}$: Expected number of deaths for group $g$ in state $i$ 
+- $p_{i,g}$: Probability of death registration for group $g$ in state $i$  
+- $g$: Gender group (male or female)  
+- $a[g]$: Gender-specific intercept  
+- $b[\text{state}]$: State-level random effect  
+- $\text{education}_{i}$: Median years of education among women in state  $i$ 
+ 
+- $c, d$: Coefficients for education and ownership, respectively
+
+
+
+#### 🟣 Direct Effect (adjusting for ownership)
+
+```{=latex}
+\begin{align*}
+O_{i,g} &\sim \text{Binomial}(E_{i,g}, p_{i,g}) \\
+\text{logit}(p_{i,g}) &= a[g] + b[\text{state}] + c \cdot \text{education}_{i} + d \cdot \text{ownership}_{i} \\[1.5ex]
+a[g] &\sim \text{Normal}(\bar{a}, \sigma) \\
+\bar{a} &\sim \text{Normal}(0, 1.5) \\
+\sigma &\sim \text{Exponential}(3) \\
+b[\text{state}] &\sim \text{Normal}(0, 0.1) \\
+c &\sim \text{Normal}(0, 0.1) \\
+d &\sim \text{Normal}(0, 0.05)
+\end{align*}
+```
+
+**Where:**
+
+-  $O_{i,g}$: Number of registered deaths for group $g$ in state  $i$
+- $E_{i,g}$: Expected number of deaths for group $g$ in state $i$ 
+- $p_{i,g}$: Probability of death registration for group $g$ in state $i$  
+- $g$: Gender group (male or female)  
+- $a[g]$: Gender-specific intercept  
+- $b[\text{state}]$: State-level random effect  
+- $\text{education}_{i}$: Median years of education among women in state  $i$ 
+- $\text{ownership}_{i}$: Proportion of women owning land or house in state $i$  
+- $c, d$: Coefficients for education and ownership, respectively
+
+:::
+
+------------------------------------------------------------------------

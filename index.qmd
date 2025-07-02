@@ -1,0 +1,36 @@
+---
+title: "Gender Disparities in the Completeness of Death Registration in India"
+bibliography: references.bib
+---
+
+## 🧭 Background
+
+::: {style="text-align: justify;"}
+
+Civil registration and vital statistics (CRVS) systems play a key role in recording births and deaths, helping establish legal identity and supporting access to public services [@setel2007]. They are also important for planning and policy, making them central to governance and development [@abouzahr2015]. 📑
+
+Countries with stronger CRVS systems tend to see better health outcomes [@phillips2015]. But in many low- and middle-income settings, these systems remain weak — a situation often referred to as the *“scandal of invisibility”* [@setel2007; @abouzahr2015; @phillips2015]. 🌍
+
+Gender gaps in registration reflect deeper inequalities. In many places, especially where legal and cultural norms limit women's access to property or pensions, deaths of women are less likely to be officially recorded [@buvinic2019; @abouzahr2019]. Men’s deaths are more often registered because they are tied to claims and inheritance processes. ⚖️
+
+India’s CRS was formalised through the Registration of Births and Deaths Act in 1969 and is managed by the Office of the Registrar General of India (ORGI) [@orgi2022]. To fill gaps in coverage, the Sample Registration System (SRS) was introduced in 1970 as a complementary data source [@orgi2022a]. Reforms in the 2000s helped push forward improvements [@setel2007; @mahapatra2007; @hill2007; @abouzahr2007].
+
+Since then, progress has been uneven. Birth registration increased from under 60% in 2001 to more than 80% in 2010. Death registration also improved, reaching 69.3% in 2007, but gains slowed after that [@abouzahr2014; @kumar2019]. Renewed efforts around 2014 led to more consistent improvements. Still, gaps remain. In 2018, men were nearly 13% more likely than women to have their deaths registered [@adair2021].
+:::
+
+## 🎯 Study Objectives
+
+::: {style="text-align: justify;"}
+
+This study focuses on three main objectives:
+
+1. To estimate completeness of death registration (by sex and total) in bigger Indian states (2014–2021).
+2. To assess district-level gender disparities in death registration in 2021.
+3 To explore the direct and indirect effects of gender, with asset ownership as a mediating factor, for the years 2015 and 2020.
+
+Together, these questions aim to show how gender affects registration and whether material differences — such as owning household assets — help explain the gap. 📈
+
+:::
+
+
+## 📚 References

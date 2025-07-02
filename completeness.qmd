@@ -1,0 +1,317 @@
+## Completeness of Death Registration in India by Gender at the District Level (NFHS-5)
+
+
+:::panel-tabset
+
+## Male
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load required libraries
+library(tidyverse)
+library(here)
+library(sf)
+library(leaflet)
+library(viridisLite)  # For color scales
+
+r <- read_rds(here("data", "ind_dist_comp_nfhs5_sf.rds"))
+
+non_overlap <- read_rds(here("data", "disputed_area_sf.rds"))
+
+# --------------------------------------------------------------------------
+# STEP 1: Prepare the data (replace 'r' and 'non_overlap' with your actual data)
+# --------------------------------------------------------------------------
+reg <- r |> 
+  st_transform(4326) |> 
+  filter(estimate_cat == "Male") |> 
+  mutate(
+    estmate = round(estmate * 100, 1),  # Convert to percentage
+    label = paste0(
+      "<b>State:</b> ", state.x, "<br>",
+      "<b>District:</b> ", district.x, "<br>",
+      "<b>Completeness:</b> ", estmate, "%"
+    )
+  )
+
+# --------------------------------------------------------------------------
+# STEP 2: Create the interactive leaflet map
+# --------------------------------------------------------------------------
+# Define color palette (matching viridis 'G' option)
+pal <- colorNumeric(
+  palette = viridis(10, option = "G"),  # Exact viridis-Green
+  domain = reg$estmate,
+  na.color = "grey90"
+)
+
+# Initialize map
+map <- leaflet() |> 
+  # Base map (light cartoDB for clean background)
+  addProviderTiles("CartoDB.Positron") |> 
+  
+  # Add districts - colored polygons with tooltips
+  addPolygons(
+    data = reg,
+    fillColor = ~pal(estmate),
+    fillOpacity = 1,
+    color = "black",
+    weight = 0.15,
+    label = ~lapply(label, htmltools::HTML),  # Fancy hover
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "white",
+      bringToFront = TRUE
+    )
+  ) |> 
+  
+  # Add grey non-overlap regions
+  addPolygons(
+    data = non_overlap,
+    fillColor = "grey",
+    fillOpacity = 1,
+    color = NA,
+    weight = 0,
+    label = "Data not available / Disputed Region"
+  ) |> 
+  
+  # Add legend
+  addLegend(
+    position = "bottomright",
+    pal = pal,
+    values = reg$estmate,
+    title = "Completeness (%)",
+    opacity = 1,
+    labFormat = labelFormat(suffix = "%")
+  ) |> 
+  
+  # Add scale bar
+  addScaleBar(position = "bottomleft") |> 
+  
+  # Add layer control for gender facets
+  addLayersControl(
+    overlayGroups = unique(reg$estimate_cat),
+    options = layersControlOptions(collapsed = FALSE)
+  )  
+  
+
+
+# --------------------------------------------------------------------------
+# STEP 3: Display and save
+# --------------------------------------------------------------------------
+# Show map
+map
+
+# Save as HTML (uncomment to use)
+# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+
+```
+
+
+## Female
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load required libraries
+library(dplyr)
+library(sf)
+library(leaflet)
+library(viridisLite)  # For color scales
+
+r <- read_rds(here("data", "ind_dist_comp_nfhs5_sf.rds"))
+
+non_overlap <- read_rds(here("data", "disputed_area_sf.rds"))
+
+# --------------------------------------------------------------------------
+# STEP 1: Prepare the data (replace 'r' and 'non_overlap' with your actual data)
+# --------------------------------------------------------------------------
+reg <- r |> 
+  st_transform(4326) |> 
+  filter(estimate_cat == "Female") |> 
+  mutate(
+    estmate = round(estmate * 100, 1),  # Convert to percentage
+label = paste0(
+      "<b>State:</b> ", state.x, "<br>",
+      "<b>District:</b> ", district.x, "<br>",
+      "<b>Completeness:</b> ", estmate, "%"
+    )
+  )
+
+
+
+# --------------------------------------------------------------------------
+# STEP 2: Create the interactive leaflet map
+# --------------------------------------------------------------------------
+# Define color palette (matching viridis 'G' option)
+pal <- colorNumeric(
+  palette = viridis(10, option = "G"),  # Exact viridis-Green
+  domain = reg$estmate,
+  na.color = "grey90"
+)
+
+# Initialize map
+map <- leaflet() |> 
+  # Base map (light cartoDB for clean background)
+  addProviderTiles("CartoDB.Positron") |> 
+  
+  # Add districts - colored polygons with tooltips
+  addPolygons(
+    data = reg,
+    fillColor = ~pal(estmate),
+    fillOpacity = 1,
+    color = "black",
+    weight = 0.15,
+    label = ~lapply(label, htmltools::HTML),  # Fancy hover
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "white",
+      bringToFront = TRUE
+    )
+  ) |> 
+  
+  # Add grey non-overlap regions
+  addPolygons(
+    data = non_overlap,
+    fillColor = "grey",
+    fillOpacity = 1,
+    color = NA,
+    weight = 0,
+    label = "Data not available / Disputed Region"
+  ) |> 
+  
+  # Add legend
+  addLegend(
+    position = "bottomright",
+    pal = pal,
+    values = reg$estmate,
+    title = "Completeness (%)",
+    opacity = 0.8,
+    labFormat = labelFormat(suffix = "%")
+  ) |> 
+  
+  # Add scale bar
+  addScaleBar(position = "bottomleft") |> 
+  
+  # Add layer control for gender facets
+  addLayersControl(
+    overlayGroups = unique(reg$estimate_cat),
+    options = layersControlOptions(collapsed = FALSE)
+  ) 
+
+# --------------------------------------------------------------------------
+# STEP 3: Display and save
+# --------------------------------------------------------------------------
+# Show map
+map
+
+# Save as HTML (uncomment to use)
+# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+
+```
+
+
+
+
+## Gender Contrast (Male - Female) 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+
+r <- read_rds(here("data", "ind_dist_comp_nfhs5_sf.rds"))
+
+non_overlap <- read_rds(here("data", "disputed_area_sf.rds"))
+
+# --------------------------------------------------------------------------
+# STEP 1: Prepare the data (replace 'r' and 'non_overlap' with your actual data)
+# --------------------------------------------------------------------------
+reg <- r |> 
+  st_transform(4326) |> 
+  filter(estimate_cat == "Gender Contrast (Male - Female)") |> 
+  mutate(
+    estmate = round(estmate * 100, 1),  # Convert to percentage
+label = paste0(
+      "<b>State:</b> ", state.x, "<br>",
+      "<b>District:</b> ", district.x, "<br>",
+      "<b>Completeness:</b> ", estmate, "%"
+    )
+  )
+
+# --------------------------------------------------------------------------
+# STEP 2: Create the interactive leaflet map
+# --------------------------------------------------------------------------
+# Define color palette (matching viridis 'G' option)
+pal <- colorNumeric(
+  palette = rev(viridis(10, option = "G")),  # Reversed colors
+  domain = reg$estmate,
+  na.color = "grey90"
+)
+
+# Initialize map
+map <- leaflet() |> 
+  # Base map (light cartoDB for clean background)
+  addProviderTiles("CartoDB.Positron") |> 
+  
+  # Add districts - colored polygons with tooltips
+  addPolygons(
+    data = reg,
+    fillColor = ~pal(estmate),
+    fillOpacity = 1,
+    color = "black",
+    weight = 0.15,
+    label = ~lapply(label, htmltools::HTML),  # Fancy hover
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "white",
+      bringToFront = TRUE
+    )
+  ) |> 
+  
+  # Add grey non-overlap regions
+  addPolygons(
+    data = non_overlap,
+    fillColor = "grey",
+    fillOpacity = 1,
+    color = NA,
+    weight = 0,
+    label = "Data not available / Disputed Region"
+  ) |> 
+  
+  # Add legend
+  addLegend(
+    position = "bottomright",
+    pal = pal,
+    values = reg$estmate,
+    title = "Gender \n Contrast (%)",
+    opacity = 0.8,
+    labFormat = labelFormat(suffix = "%")
+  ) |> 
+  
+  # Add scale bar
+  addScaleBar(position = "bottomleft") |> 
+  
+  # Add layer control for gender facets
+  addLayersControl(
+    overlayGroups = unique(reg$estimate_cat),
+    options = layersControlOptions(collapsed = FALSE)
+  ) 
+
+# --------------------------------------------------------------------------
+# STEP 3: Display and save
+# --------------------------------------------------------------------------
+# Show map
+map
+
+# Save as HTML (uncomment to use)
+# htmlwidgets::saveWidget(map, "india_death_registration.html", selfcontained = TRUE)
+
+```
+
+:::
