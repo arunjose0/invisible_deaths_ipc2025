@@ -25,8 +25,10 @@ Since then, progress has been uneven. Birth registration increased from under 60
 This study focuses on three main objectives:
 
 1. To estimate completeness of death registration (by sex and total) in bigger Indian states (2014–2021).
+
 2. To assess district-level gender disparities in death registration in 2021.
-3 To explore the direct and indirect effects of gender, with asset ownership as a mediating factor, for the years 2015 and 2020.
+
+3. To explore the direct and indirect effects of gender, with asset ownership as a mediating factor, for the years 2015 and 2020.
 
 Together, these questions aim to show how gender affects registration and whether material differences — such as owning household assets — help explain the gap. 📈
 
