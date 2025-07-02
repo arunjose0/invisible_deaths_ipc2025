@@ -6,7 +6,6 @@ website:
   title: "Invisible Deaths"
   site-url: https://yourusername.github.io/invisible-deaths/
   description: "Exploring gender disparities in death registration in India using Bayesian models and interactive maps."
-  favicon: images/favicon.png
 
   navbar:
     background: success
@@ -36,6 +35,7 @@ format:
     css: styles.css
     toc: true
     toc-depth: 2
+    embed-resources: true
     smooth-scroll: true
     include-in-header:
       text: |
